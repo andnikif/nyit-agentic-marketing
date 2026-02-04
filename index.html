@@ -1,0 +1,2422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYIT Agentic Marketing Certification Suite | Strategic Blueprint 2025-2030</title>
+    <style>
+        /* ===== CSS CUSTOM PROPERTIES ===== */
+        :root {
+            --nyit-navy: #002856;
+            --nyit-navy-dark: #001a3a;
+            --nyit-gold: #F0AB00;
+            --nyit-gold-light: #FFD54F;
+            --nyit-blue: #0066CC;
+            --nyit-blue-light: #E3F2FD;
+            --bg-light: #F8F9FA;
+            --bg-white: #FFFFFF;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+            --shadow-xl: 0 20px 50px rgba(0,0,0,0.15);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.7;
+            background: var(--bg-white);
+            overflow-x: hidden;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+        h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+        h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+        h4 { font-size: 1.15rem; }
+
+        p { margin-bottom: 1rem; }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--nyit-gold);
+            background: rgba(240, 171, 0, 0.1);
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: var(--nyit-navy);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-alt {
+            background: var(--bg-light);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .text-center { text-align: center; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 40, 86, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            transition: var(--transition);
+        }
+
+        .nav.scrolled {
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .nav-brand .brand-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--nyit-gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.7rem;
+            color: var(--nyit-navy);
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 4px;
+        }
+
+        .nav-links a {
+            display: block;
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--nyit-navy-dark) 0%, var(--nyit-navy) 50%, #003d7a 100%);
+            overflow: hidden;
+            padding-top: 64px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(240,171,0,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,102,204,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(240, 171, 0, 0.15);
+            border: 1px solid rgba(240, 171, 0, 0.3);
+            color: var(--nyit-gold);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 28px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--nyit-gold);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .gold {
+            color: var(--nyit-gold);
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 40px;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .hero-stat {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            min-width: 180px;
+            transition: var(--transition);
+        }
+
+        .hero-stat:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        .hero-stat .number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--nyit-gold);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .hero-stat .label {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.6);
+            font-weight: 500;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--nyit-gold);
+            color: var(--nyit-navy);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(240, 171, 0, 0.3);
+        }
+
+        .hero-cta:hover {
+            background: var(--nyit-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(240, 171, 0, 0.4);
+        }
+
+        .hero-cta .arrow {
+            transition: transform 0.2s;
+        }
+
+        .hero-cta:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* ===== THESIS SECTION ===== */
+        .thesis-banner {
+            background: linear-gradient(135deg, #001a3a 0%, var(--nyit-navy) 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .thesis-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .thesis-quote {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        .thesis-quote .highlight {
+            color: var(--nyit-gold);
+        }
+
+        .thesis-sub {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            padding: 28px;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: transparent;
+        }
+
+        /* ===== MARKET DATA SECTION ===== */
+        .cluster-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cluster-card .cluster-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .cluster-card h4 {
+            color: var(--nyit-navy);
+            margin-bottom: 4px;
+        }
+
+        .cluster-card .cluster-subtitle {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .cluster-stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .cluster-stat-row .stat-label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .cluster-stat-row .stat-value {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--nyit-navy);
+        }
+
+        .ai-status {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-augmentation {
+            background: #E3F2FD;
+            color: #1565C0;
+        }
+
+        .status-disruption {
+            background: #FFEBEE;
+            color: #C62828;
+        }
+
+        .status-transformation {
+            background: #FFF3E0;
+            color: #E65100;
+        }
+
+        .status-acceleration {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        /* ===== BAR CHART ===== */
+        .bar-chart {
+            margin-top: 40px;
+        }
+
+        .bar-chart-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--nyit-navy);
+            margin-bottom: 24px;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .bar-label {
+            flex: 0 0 200px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-align: right;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 36px;
+            background: var(--bg-light);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            padding-left: 12px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #fff;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0;
+        }
+
+        .bar-fill.animated {
+            width: var(--target-width);
+        }
+
+        .bar-fill.navy { background: var(--nyit-navy); }
+        .bar-fill.gold { background: var(--nyit-gold); color: var(--nyit-navy); }
+        .bar-fill.blue { background: var(--nyit-blue); }
+
+        /* ===== DISRUPTION SECTION ===== */
+        .hollow-middle {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .level-card {
+            padding: 24px;
+            border-radius: var(--radius-md);
+            border-left: 4px solid;
+        }
+
+        .level-card.entry {
+            background: #FFF8E1;
+            border-color: #FFC107;
+        }
+
+        .level-card.mid {
+            background: #FFEBEE;
+            border-color: #F44336;
+        }
+
+        .level-card.senior {
+            background: #E8F5E9;
+            border-color: #4CAF50;
+        }
+
+        .level-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .level-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* ===== PAIN POINTS TABLE ===== */
+        .pain-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 32px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .pain-table thead th {
+            background: var(--nyit-navy);
+            color: #fff;
+            padding: 14px 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-align: left;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .pain-table tbody td {
+            padding: 16px 20px;
+            font-size: 0.88rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .pain-table tbody tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .pain-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pain-table .problem {
+            color: #C62828;
+            font-weight: 600;
+        }
+
+        .pain-table .solution {
+            color: #2E7D32;
+            font-weight: 600;
+        }
+
+        /* ===== COMPETITIVE SECTION ===== */
+        .competitor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .competitor-card {
+            padding: 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            background: var(--bg-white);
+        }
+
+        .competitor-card h4 {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .competitor-card .comp-type {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .competitor-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .competitor-card .comp-price {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .nyit-position {
+            background: linear-gradient(135deg, var(--nyit-navy) 0%, #003d7a 100%);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            color: #fff;
+            margin-top: 32px;
+        }
+
+        .nyit-position h3 {
+            color: var(--nyit-gold);
+            margin-bottom: 16px;
+        }
+
+        .nyit-position p {
+            color: rgba(255,255,255,0.8);
+            max-width: 700px;
+        }
+
+        .position-hooks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .hook-item {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .hook-item .hook-label {
+            font-size: 0.72rem;
+            color: var(--nyit-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* ===== PERSONAS SECTION ===== */
+        .persona-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .persona-card .persona-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+
+        .persona-card .persona-tag.primary {
+            background: #E3F2FD;
+            color: #1565C0;
+        }
+
+        .persona-card .persona-tag.secondary {
+            background: #FFF3E0;
+            color: #E65100;
+        }
+
+        .persona-card .persona-tag.growth {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        .persona-card h4 {
+            color: var(--nyit-navy);
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+
+        .persona-card .persona-profile {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .persona-card .persona-anxiety {
+            font-size: 0.88rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            border-left: 3px solid var(--nyit-gold);
+            padding-left: 12px;
+            margin: 12px 0;
+        }
+
+        .persona-card .persona-pitch {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--nyit-navy);
+            margin-top: 12px;
+        }
+
+        .persona-card .persona-pitch .pitch-label {
+            font-size: 0.7rem;
+            color: var(--nyit-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* ===== TRACKS SECTION ===== */
+        .tracks-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .program-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .meta-item .meta-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--nyit-blue-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        /* Core Module */
+        .core-module {
+            background: linear-gradient(135deg, var(--nyit-navy) 0%, #003d7a 100%);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            color: #fff;
+            margin-bottom: 36px;
+        }
+
+        .core-module .core-badge {
+            display: inline-block;
+            background: rgba(240,171,0,0.2);
+            color: var(--nyit-gold);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+
+        .core-module h3 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+
+        .core-weeks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .core-week {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+        }
+
+        .core-week h4 {
+            font-size: 0.88rem;
+            color: var(--nyit-gold);
+            margin-bottom: 6px;
+        }
+
+        .core-week p {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0;
+        }
+
+        /* Track Cards */
+        .track-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .track-card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-6px);
+            border-color: transparent;
+        }
+
+        .track-header {
+            padding: 28px 28px 0;
+        }
+
+        .track-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 14px;
+        }
+
+        .track-1 .track-number { background: #E3F2FD; color: #1565C0; }
+        .track-2 .track-number { background: #E8F5E9; color: #2E7D32; }
+        .track-3 .track-number { background: #FFF3E0; color: #E65100; }
+        .track-4 .track-number { background: #F3E5F5; color: #7B1FA2; }
+        .track-5 .track-number { background: #FFEBEE; color: #C62828; }
+        .track-6 .track-number { background: #FFF8E1; color: #F57F17; }
+
+        .track-header h3 {
+            color: var(--nyit-navy);
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .track-meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .track-tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 50px;
+            background: var(--bg-light);
+            color: var(--text-muted);
+        }
+
+        .track-tag.prospect-high { background: #E8F5E9; color: #2E7D32; }
+        .track-tag.prospect-very-high { background: #C8E6C9; color: #1B5E20; }
+        .track-tag.prospect-explosive { background: #FFCDD2; color: #B71C1C; }
+        .track-tag.prospect-critical { background: #FFF3E0; color: #E65100; }
+        .track-tag.prospect-moderate { background: #E3F2FD; color: #1565C0; }
+
+        .track-body {
+            padding: 0 28px 28px;
+        }
+
+        .track-modules {
+            margin-top: 12px;
+        }
+
+        .track-module-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            background: none;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--nyit-navy);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .track-module-toggle:hover {
+            background: var(--bg-light);
+        }
+
+        .track-module-toggle .toggle-arrow {
+            transition: transform 0.3s;
+            margin-left: auto;
+            font-size: 0.7rem;
+        }
+
+        .track-module-toggle.open .toggle-arrow {
+            transform: rotate(180deg);
+        }
+
+        .track-module-list {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .track-module-list.open {
+            max-height: 600px;
+        }
+
+        .module-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .module-item:last-child {
+            border-bottom: none;
+        }
+
+        .module-item h5 {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--nyit-navy);
+            margin-bottom: 4px;
+        }
+
+        .module-item p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        .track-capstone {
+            margin-top: 14px;
+            background: linear-gradient(135deg, rgba(240,171,0,0.06), rgba(240,171,0,0.02));
+            border: 1px solid rgba(240,171,0,0.15);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+        }
+
+        .track-capstone .capstone-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--nyit-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 4px;
+        }
+
+        .track-capstone h5 {
+            font-size: 0.88rem;
+            color: var(--nyit-navy);
+            margin-bottom: 4px;
+        }
+
+        .track-capstone p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* ===== ROI SECTION ===== */
+        .roi-chart {
+            margin: 32px 0;
+        }
+
+        .roi-bar-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .roi-bar-label {
+            flex: 0 0 180px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-align: right;
+        }
+
+        .roi-bars {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .roi-bar {
+            height: 28px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            padding-left: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0;
+        }
+
+        .roi-bar.animated {
+            width: var(--target-width);
+        }
+
+        .roi-bar.current {
+            background: #B0BEC5;
+            color: #37474F;
+        }
+
+        .roi-bar.ai-enabled {
+            background: linear-gradient(90deg, #2E7D32, #4CAF50);
+            color: #fff;
+        }
+
+        .roi-premium {
+            flex: 0 0 80px;
+            text-align: center;
+        }
+
+        .roi-premium .premium-value {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #2E7D32;
+        }
+
+        /* Pricing Card */
+        .pricing-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+            align-items: start;
+        }
+
+        .pricing-card {
+            background: var(--bg-white);
+            border: 2px solid var(--nyit-gold);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            text-align: center;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--nyit-navy);
+            line-height: 1;
+        }
+
+        .pricing-card .price-unit {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .pricing-card .price-rationale {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .bundle-card {
+            background: linear-gradient(135deg, var(--nyit-navy) 0%, #003d7a 100%);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .bundle-card .bundle-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--nyit-gold);
+            margin-bottom: 8px;
+        }
+
+        .bundle-card .bundle-price {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .bundle-card .bundle-savings {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .bundle-card .bundle-detail {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .competitor-pricing {
+            margin-top: 32px;
+        }
+
+        .comp-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.88rem;
+        }
+
+        .comp-price-row:last-child { border-bottom: none; }
+
+        .comp-price-row .comp-name { color: var(--text-secondary); }
+
+        .comp-price-row .comp-cost {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .comp-price-row.nyit-row {
+            background: rgba(240,171,0,0.08);
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            border-bottom: none;
+            margin-top: 4px;
+        }
+
+        .comp-price-row.nyit-row .comp-name {
+            color: var(--nyit-navy);
+            font-weight: 700;
+        }
+
+        .comp-price-row.nyit-row .comp-cost {
+            color: var(--nyit-navy);
+        }
+
+        /* ===== NEXT STEPS ===== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .step-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            padding: 32px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--nyit-gold);
+            color: var(--nyit-navy);
+            font-weight: 800;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .step-card h4 {
+            color: var(--nyit-navy);
+            margin-bottom: 8px;
+        }
+
+        .step-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* ===== CLOSING CTA ===== */
+        .closing-cta {
+            background: linear-gradient(135deg, var(--nyit-navy-dark) 0%, var(--nyit-navy) 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .closing-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(240,171,0,0.06) 0%, transparent 70%);
+        }
+
+        .closing-cta h2 {
+            color: #fff;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .closing-cta p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+            position: relative;
+        }
+
+        .closing-cta .cta-tagline {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--nyit-gold);
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--nyit-navy-dark);
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 0;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--nyit-gold);
+        }
+
+        /* ===== ANIMATION ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: var(--nyit-gold);
+            border-radius: 3px;
+            margin: 16px 0 24px;
+        }
+
+        .divider.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: var(--nyit-navy);
+                flex-direction: column;
+                padding: 16px;
+                border-top: 1px solid rgba(255,255,255,0.08);
+            }
+
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
+
+            .hollow-middle {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-section {
+                grid-template-columns: 1fr;
+            }
+
+            .bar-label {
+                flex: 0 0 120px;
+                font-size: 0.75rem;
+            }
+
+            .roi-bar-label {
+                flex: 0 0 100px;
+                font-size: 0.75rem;
+            }
+
+            .pain-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+            }
+
+            .hero-stat {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .section { padding: 60px 0; }
+            .container { padding: 0 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-icon">NYIT</span>
+                Agentic Marketing Series
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#market">Market Data</a></li>
+                <li><a href="#disruption">Disruption</a></li>
+                <li><a href="#competitive">Competitive Edge</a></li>
+                <li><a href="#personas">Personas</a></li>
+                <li><a href="#tracks">6 Tracks</a></li>
+                <li><a href="#roi">ROI</a></li>
+                <li><a href="#next-steps">Next Steps</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Strategic Blueprint 2025 &ndash; 2030</div>
+                <h1>
+                    NYIT AI-Integrated<br>
+                    <span class="gold">Marketing Certification Suite</span>
+                </h1>
+                <p class="hero-tagline">
+                    A data-driven proposal for six "Agentic Marketing" certificates, positioning
+                    NYIT as the premier applied AI marketing educator in the New York metropolitan area.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="number" data-count="150000">150K+</div>
+                        <div class="label">NYC Marketing Jobs</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">15&ndash;25%</div>
+                        <div class="label">AI Salary Premium</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">53%</div>
+                        <div class="label">Tasks Automatable</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">6</div>
+                        <div class="label">Certificate Tracks</div>
+                    </div>
+                </div>
+                <a href="#tracks" class="hero-cta">
+                    Explore the 6 Tracks <span class="arrow">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THESIS BANNER ===== -->
+    <div class="thesis-banner">
+        <div class="container">
+            <div class="thesis-content">
+                <p class="thesis-quote">
+                    &ldquo;Stop chatting with AI. <span class="highlight">Start orchestrating it.</span>&rdquo;
+                </p>
+                <p class="thesis-sub">
+                    The market is shifting from the "Copilot" era to "Agentic AI." NYIT's polytechnic identity
+                    makes it uniquely positioned to teach professionals how to build and govern marketing systems &mdash;
+                    not just use tools.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MARKET DATA ===== -->
+    <section class="section" id="market">
+        <div class="container">
+            <div class="fade-up">
+                <span class="section-label">Section 1</span>
+                <h2 class="section-title">NYC Marketing Labor Market (2025)</h2>
+                <p class="section-subtitle">
+                    The New York-Newark-Jersey City MSA remains the global epicenter of marketing employment.
+                    Four primary job clusters represent the largest addressable markets for certificate enrollment.
+                </p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="grid-2 fade-up">
+                <!-- Cluster A -->
+                <div class="card cluster-card">
+                    <div class="cluster-icon" style="background: #E3F2FD;">&#127919;</div>
+                    <h4>Marketing Managers</h4>
+                    <p class="cluster-subtitle">The Strategic Core</p>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">NYC Employment</span>
+                        <span class="stat-value">~46,600</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">Median Salary (NYC)</span>
+                        <span class="stat-value">$190,000</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">Upper Quartile</span>
+                        <span class="stat-value">$250,000+</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">AI Coping Status</span>
+                        <span class="ai-status status-augmentation">Augmentation</span>
+                    </div>
+                </div>
+
+                <!-- Cluster B -->
+                <div class="card cluster-card">
+                    <div class="cluster-icon" style="background: #E8F5E9;">&#128202;</div>
+                    <h4>Market Research Analysts & Specialists</h4>
+                    <p class="cluster-subtitle">The Data Engine</p>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">NYC Employment</span>
+                        <span class="stat-value">~76,000 &ndash; 81,000</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">Median Salary (NYC)</span>
+                        <span class="stat-value">$99,600</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">Entry-Level</span>
+                        <span class="stat-value">$64,000</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">AI Coping Status</span>
+                        <span class="ai-status status-disruption">Disruption</span>
+                    </div>
+                </div>
+
+                <!-- Cluster C -->
+                <div class="card cluster-card">
+                    <div class="cluster-icon" style="background: #FFF3E0;">&#128227;</div>
+                    <h4>PR & Communications Specialists</h4>
+                    <p class="cluster-subtitle">The Brand Voice</p>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">NYC Employment</span>
+                        <span class="stat-value">~25,000 &ndash; 27,000</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">Mean Wages (NYC)</span>
+                        <span class="stat-value">$82,000 &ndash; $90,000</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">AI Coping Status</span>
+                        <span class="ai-status status-transformation">Transformation</span>
+                    </div>
+                </div>
+
+                <!-- Cluster D -->
+                <div class="card cluster-card">
+                    <div class="cluster-icon" style="background: #F3E5F5;">&#128640;</div>
+                    <h4>Sales Enablement & Revenue Ops</h4>
+                    <p class="cluster-subtitle">The Growth Engine</p>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">Salary Range (NYC)</span>
+                        <span class="stat-value">$100,000 &ndash; $160,000</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">Growth Trend</span>
+                        <span class="stat-value">High-Growth Niche</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">AI Coping Status</span>
+                        <span class="ai-status status-acceleration">Acceleration</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employment Volume Bar Chart -->
+            <div class="bar-chart fade-up" style="margin-top: 48px;">
+                <h3 class="bar-chart-title">NYC Marketing Employment Volume by Cluster</h3>
+                <div class="bar-row">
+                    <span class="bar-label">Market Research & Specialists</span>
+                    <div class="bar-track">
+                        <div class="bar-fill navy" style="--target-width: 95%;">~80,000 jobs</div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Marketing Managers</span>
+                    <div class="bar-track">
+                        <div class="bar-fill gold" style="--target-width: 58%;">~46,600 jobs</div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">PR & Communications</span>
+                    <div class="bar-track">
+                        <div class="bar-fill blue" style="--target-width: 33%;">~27,000 jobs</div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Sales Enablement & RevOps</span>
+                    <div class="bar-track">
+                        <div class="bar-fill navy" style="--target-width: 18%;">Growing Niche</div>
+                    </div>
+                </div>
+            </div>
+            <p class="fade-up" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 12px;">
+                Sources: Bureau of Labor Statistics (BLS), Indeed, Built In NYC, ZipRecruiter. Data as of 2024&ndash;2025.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== DISRUPTION ===== -->
+    <section class="section section-alt" id="disruption">
+        <div class="container">
+            <div class="fade-up">
+                <span class="section-label">Section 2</span>
+                <h2 class="section-title">The Disruption Vector</h2>
+                <p class="section-subtitle">
+                    The marketing profession is moving from the "Novelty Phase" (2023&ndash;2024) to the
+                    "Integration Phase" (2025&ndash;2030). A fundamental restructuring is underway.
+                </p>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Hollow Middle -->
+            <h3 class="fade-up" style="margin-top: 32px; margin-bottom: 8px; color: var(--nyit-navy);">The "Hollow Middle" Phenomenon</h3>
+            <p class="fade-up" style="color: var(--text-secondary); margin-bottom: 24px; max-width: 700px;">
+                Marketing tasks are being hollowed out at the mid-level tier, squeezing professionals from both sides.
+            </p>
+
+            <div class="hollow-middle fade-up">
+                <div class="level-card entry">
+                    <h4>Entry-Level (0&ndash;3 years)</h4>
+                    <p>Tasks like copywriting, social scheduling, and basic data entry are being automated.
+                        Employers are hiring fewer juniors, expecting AI to handle the execution work.</p>
+                </div>
+                <div class="level-card mid">
+                    <h4>Mid-Level (4&ndash;10 years) &mdash; Primary Target</h4>
+                    <p>Squeezed from both sides. Expected to produce the output of a team using AI,
+                        becoming "editors" of synthetic output &mdash; but lack the formal training to manage
+                        this transition effectively.</p>
+                </div>
+                <div class="level-card senior">
+                    <h4>Senior-Level (10+ years)</h4>
+                    <p>Demand remains robust for strategic judgment, but leaders often fly blind on
+                        governance and ethics. They are responsible for AI output but lack frameworks
+                        to ensure it is safe, on-brand, and legal.</p>
+                </div>
+            </div>
+
+            <!-- Pain Points Table -->
+            <h3 class="fade-up" style="margin-top: 48px; margin-bottom: 8px; color: var(--nyit-navy);">Key Pain Points by Role</h3>
+            <p class="fade-up" style="color: var(--text-secondary); margin-bottom: 8px; max-width: 700px;">
+                Each role cluster faces distinct AI challenges that map directly to the proposed certificate tracks.
+            </p>
+
+            <table class="pain-table fade-up">
+                <thead>
+                    <tr>
+                        <th style="width:22%">Role Cluster</th>
+                        <th style="width:39%">Primary AI Pain Point</th>
+                        <th style="width:39%">The Upskilling Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Market Research Analyst</strong></td>
+                        <td><span class="problem">"The Data Deluge"</span> &mdash; AI generates too much data.
+                            Analysts drown in synthetic surveys and automated reports, struggling to separate
+                            signal from noise. Hallucination risk is a major anxiety.</td>
+                        <td><span class="solution">Computational Sensemaking</span> &mdash; Using AI to
+                            synthesize and interrogate data, not just collect it. Validating AI insights
+                            against ground-truth data.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Social Media Manager</strong></td>
+                        <td><span class="problem">"The Authenticity Crisis"</span> &mdash; Audiences reject
+                            AI-generated content. Managers fear the reputational damage of "uncanny valley" posts
+                            while being pressured to 10x output.</td>
+                        <td><span class="solution">Hybrid Creativity</span> &mdash; Workflows using AI for
+                            ideation and distribution while preserving human touch for "last mile" engagement.
+                            Watermarking and ethical transparency.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Product Marketing Manager</strong></td>
+                        <td><span class="problem">"The Roadmap Disconnect"</span> &mdash; Using AI tools in
+                            isolation (shadow AI) without integrating them into the formal product launch lifecycle.</td>
+                        <td><span class="solution">Lifecycle Architecture</span> &mdash; Integrating AI agents
+                            into the formal GTM process. Simulating customer feedback loops before launch.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marketing Manager</strong></td>
+                        <td><span class="problem">"The Governance Gap"</span> &mdash; Fear of inadvertent bias,
+                            copyright infringement, or brand damage caused by unmonitored AI agents. Paralyzed
+                            by legal and ethical risks.</td>
+                        <td><span class="solution">Responsible AI Ops</span> &mdash; Frameworks for testing,
+                            monitoring, and "red-teaming" marketing AI agents. Establishing guardrails for
+                            automated systems.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Agentic Shift -->
+            <div class="nyit-position fade-up" style="margin-top: 40px;">
+                <h3>The Shift to Agentic Workflows</h3>
+                <p>
+                    The most critical trend for 2025&ndash;2030 is the rise of <strong>Agentic AI</strong>. Unlike ChatGPT (which waits for a prompt), agents can <em>act</em>.
+                </p>
+                <div class="position-hooks" style="margin-top: 20px;">
+                    <div class="hook-item">
+                        <span class="hook-label">Current State</span>
+                        A marketer asks an LLM to "write an email"
+                    </div>
+                    <div class="hook-item" style="border-color: var(--nyit-gold);">
+                        <span class="hook-label">Future State (2026+)</span>
+                        A marketer deploys a "Campaign Agent" that autonomously monitors, adjusts, generates, tests, and reports
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem;">
+                    <strong style="color: var(--nyit-gold);">Curriculum Implication:</strong>
+                    NYIT must teach <strong>Agent Orchestration</strong> &mdash; the skill of defining goals, constraints,
+                    and permissions for AI agents. This is a higher-order skill than prompt engineering.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMPETITIVE EDGE ===== -->
+    <section class="section" id="competitive">
+        <div class="container">
+            <div class="fade-up">
+                <span class="section-label">Section 3</span>
+                <h2 class="section-title">Competitive Positioning</h2>
+                <p class="section-subtitle">
+                    NYIT must differentiate from formidable NYC incumbents. The gap: no dominant player
+                    offers an academically-backed, deeply technical "Marketing Technologist" certificate.
+                </p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="competitor-grid fade-up">
+                <div class="competitor-card">
+                    <h4>Columbia & NYU</h4>
+                    <div class="comp-type">Theory & Executive Strategy</div>
+                    <p>Broad, high-level executive education for C-suite leaders. Passive coursework ("watch and learn")
+                        with heavy reading. Teaches <em>why</em> AI matters, not <em>how</em> to build with it.</p>
+                    <div class="comp-price">$2,500 &ndash; $4,000 per certificate</div>
+                </div>
+                <div class="competitor-card">
+                    <h4>Cornell (eCornell)</h4>
+                    <div class="comp-type">Traditional + AI Module</div>
+                    <p>Rigorous multi-month programs with strong reputation. But AI is added as a module,
+                        not the core operating system. Higher price point creates a barrier for self-funded learners.</p>
+                    <div class="comp-price">~$3,600 per certificate</div>
+                </div>
+                <div class="competitor-card">
+                    <h4>General Assembly</h4>
+                    <div class="comp-type">Entry-Level & Bootcamp</div>
+                    <p>Excellent for career switchers but lacks academic rigor and "University" signaling.
+                        Short workshops (2 days) focusing on surface-level tools rather than deep architectural understanding.</p>
+                    <div class="comp-price">$3,000 &ndash; $4,000</div>
+                </div>
+            </div>
+
+            <!-- NYIT Position -->
+            <div class="nyit-position fade-up">
+                <h3>The NYIT Opportunity: The "Polytechnic" Position</h3>
+                <p>
+                    As an institute of technology, NYIT can claim the <strong>"Builder" credential</strong> position.
+                    There is no dominant NYC player offering an academically-backed, deeply technical certificate
+                    that is hands-on with agent frameworks.
+                </p>
+                <div class="position-hooks">
+                    <div class="hook-item">
+                        <span class="hook-label">Marketing Hook</span>
+                        "Stop chatting with AI. Start orchestrating it."
+                    </div>
+                    <div class="hook-item">
+                        <span class="hook-label">Brand Value</span>
+                        Polytechnic heritage = rigorous, engineering-adjacent credibility
+                    </div>
+                    <div class="hook-item">
+                        <span class="hook-label">Gap to Fill</span>
+                        No dominant "Marketing Technologist" certificate in NYC
+                    </div>
+                    <div class="hook-item">
+                        <span class="hook-label">Differentiator</span>
+                        "Don't just write a strategy; build the agent that executes it."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PERSONAS ===== -->
+    <section class="section section-alt" id="personas">
+        <div class="container">
+            <div class="fade-up">
+                <span class="section-label">Section 4</span>
+                <h2 class="section-title">Target Audience Personas</h2>
+                <p class="section-subtitle">
+                    Three distinct personas with different pain points and motivations.
+                    A "one-size-fits-all" approach will fail.
+                </p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="grid-3 fade-up">
+                <!-- Persona A -->
+                <div class="card persona-card">
+                    <span class="persona-tag primary">Primary Target</span>
+                    <h4>The "Frozen Middle"</h4>
+                    <p class="persona-profile">Marketing Managers, Brand Managers, Senior Specialists. 7&ndash;12 years experience. Age 30&ndash;45.</p>
+                    <p class="persona-anxiety">
+                        "I see the 23-year-old analyst using AI to do my job in half the time. Am I obsolete?"
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                        <strong>Motivation:</strong> Fear of obsolescence and desire for salary protection.
+                        Want to prepare for Director-level roles.
+                    </p>
+                    <div class="persona-pitch">
+                        <span class="pitch-label">NYIT Pitch</span>
+                        "Secure your future. Learn to manage the machines that are managing the work."
+                    </div>
+                </div>
+
+                <!-- Persona B -->
+                <div class="card persona-card">
+                    <span class="persona-tag secondary">Secondary Target</span>
+                    <h4>The "Data Migrant"</h4>
+                    <p class="persona-profile">Market Research Analysts, Media Buyers, SEO Specialists. Heavy Excel/data work.</p>
+                    <p class="persona-anxiety">
+                        "My entire job description is 'automatable tasks'. I need to move up the value chain."
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                        <strong>Motivation:</strong> Efficiency and survival. Need to transition from
+                        "Data Processor" to "Data Storyteller."
+                    </p>
+                    <div class="persona-pitch">
+                        <span class="pitch-label">NYIT Pitch</span>
+                        "Don't just report the data. Interrogate it. Become the strategic voice behind the numbers."
+                    </div>
+                </div>
+
+                <!-- Persona C -->
+                <div class="card persona-card">
+                    <span class="persona-tag growth">Growth Target</span>
+                    <h4>The "Tech-Forward Pivot"</h4>
+                    <p class="persona-profile">Sales Ops, CRM Managers, Tech-savvy Sales Reps. Already using Salesforce/HubSpot daily.</p>
+                    <p class="persona-anxiety">
+                        "I'm doing this ad-hoc. I need a system."
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                        <strong>Motivation:</strong> Career acceleration. Want to move into the high-paying
+                        Revenue Operations (RevOps) sector.
+                    </p>
+                    <div class="persona-pitch">
+                        <span class="pitch-label">NYIT Pitch</span>
+                        "Become the architect of your company's growth engine."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THE 6 TRACKS ===== -->
+    <section class="section" id="tracks">
+        <div class="container">
+            <div class="tracks-intro fade-up">
+                <span class="section-label">Section 5 &mdash; The Core Proposal</span>
+                <h2 class="section-title">The 6 NYIT Certificate Tracks</h2>
+                <p class="section-subtitle mx-auto">
+                    Stackable certificates designed at the intersection of NYC employment volume (demand)
+                    and AI disruption (necessity). Every student leaves with a deployed AI Agent or Strategic Playbook.
+                </p>
+                <div class="divider center"></div>
+                <div class="program-meta">
+                    <div class="meta-item">
+                        <span class="meta-icon">&#127891;</span> NYIT Agentic Marketing Series
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">&#128187;</span> Online, Hybrid Support
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">&#128197;</span> 10&ndash;12 Weeks per Certificate
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">&#128736;</span> Project-Based
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Foundation Module -->
+            <div class="core-module fade-up">
+                <span class="core-badge">Required for All Tracks</span>
+                <h3>Core Module: "The AI Foundation"</h3>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 16px;">
+                    A 2-week intensive foundation ensuring baseline fluency before students split into specialized tracks.
+                </p>
+                <div class="core-weeks">
+                    <div class="core-week">
+                        <h4>Week 1: AI Literacy & Ethics</h4>
+                        <p>LLM fundamentals (Transformers, tokens, context windows), bias detection,
+                            data privacy (GDPR/CCPA in AI), and NYIT's "Human-First" AI philosophy.</p>
+                    </div>
+                    <div class="core-week">
+                        <h4>Week 2: Prompt Engineering & Agent Basics</h4>
+                        <p>From zero-shot prompting to chain-of-thought reasoning. Introduction to agent
+                            frameworks (LangChain concepts, no-code agent builders).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track Cards Grid -->
+            <div class="grid-2">
+                <!-- Track 1 -->
+                <div class="track-card track-1 fade-up">
+                    <div class="track-header">
+                        <div class="track-number">1</div>
+                        <h3>AI-Driven Market Intelligence & Synthetic Consumer Insights</h3>
+                        <div class="track-meta-row">
+                            <span class="track-tag">Market Research Analysts</span>
+                            <span class="track-tag">NYC Vol: ~80K</span>
+                            <span class="track-tag prospect-high">High Prospect</span>
+                        </div>
+                    </div>
+                    <div class="track-body">
+                        <button class="track-module-toggle" onclick="toggleModules(this)">
+                            &#128218; View Curriculum Modules
+                            <span class="toggle-arrow">&#9660;</span>
+                        </button>
+                        <div class="track-module-list">
+                            <div class="module-item">
+                                <h5>Weeks 3&ndash;4: The Synthetic Consumer</h5>
+                                <p>Define target personas and instruct LLMs to roleplay them. Conduct "synthetic focus groups" to test messaging concepts.</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 5&ndash;6: Conversational Data Interrogation</h5>
+                                <p>Use ChatGPT Advanced Data Analysis or Claude to "chat" with massive datasets (CSV/SQL). Validate AI findings against raw data.</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 7&ndash;8: Sentiment & Trend Prediction</h5>
+                                <p>Build automated scrapers (no-code) to monitor social sentiment and predict micro-trends before they appear in traditional reports.</p>
+                            </div>
+                        </div>
+                        <div class="track-capstone">
+                            <div class="capstone-label">Capstone Project</div>
+                            <h5>"The Living Audit"</h5>
+                            <p>Build a dashboard monitoring a brand's health using real-time AI analysis of public data, presenting findings to a simulated board.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="track-card track-2 fade-up">
+                    <div class="track-header">
+                        <div class="track-number">2</div>
+                        <h3>Marketing Operations & Agentic Workflow Automation</h3>
+                        <div class="track-meta-row">
+                            <span class="track-tag">Marketing Specialists/Ops</span>
+                            <span class="track-tag">NYC Vol: ~46K</span>
+                            <span class="track-tag prospect-very-high">Very High Prospect</span>
+                        </div>
+                    </div>
+                    <div class="track-body">
+                        <button class="track-module-toggle" onclick="toggleModules(this)">
+                            &#128218; View Curriculum Modules
+                            <span class="toggle-arrow">&#9660;</span>
+                        </button>
+                        <div class="track-module-list">
+                            <div class="module-item">
+                                <h5>Weeks 3&ndash;4: The AI Tech Stack Audit</h5>
+                                <p>Map an organization's tool ecosystem. Identify "automation gaps" where AI can bridge disconnected systems (e.g., HubSpot to Slack via AI).</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 5&ndash;6: Building Autonomous Workflows</h5>
+                                <p>Design "If This, Then That" agents using Zapier, Make, or Microsoft Power Automate. Build end-to-end lead processing pipelines.</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 7&ndash;8: Data Hygiene & Governance</h5>
+                                <p>Create automated data cleaning agents to solve the "garbage in, garbage out" problem at scale.</p>
+                            </div>
+                        </div>
+                        <div class="track-capstone">
+                            <div class="capstone-label">Capstone Project</div>
+                            <h5>"The Autopilot Campaign"</h5>
+                            <p>Design a fully automated lead-nurturing workflow requiring zero human touch for the first 3 touchpoints, with error-handling protocols.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="track-card track-3 fade-up">
+                    <div class="track-header">
+                        <div class="track-number">3</div>
+                        <h3>Generative Brand Strategy & Content Governance</h3>
+                        <div class="track-meta-row">
+                            <span class="track-tag">PR & Content Managers</span>
+                            <span class="track-tag">NYC Vol: ~27K</span>
+                            <span class="track-tag prospect-moderate">Moderate Growth, High Transform</span>
+                        </div>
+                    </div>
+                    <div class="track-body">
+                        <button class="track-module-toggle" onclick="toggleModules(this)">
+                            &#128218; View Curriculum Modules
+                            <span class="toggle-arrow">&#9660;</span>
+                        </button>
+                        <div class="track-module-list">
+                            <div class="module-item">
+                                <h5>Weeks 3&ndash;4: Brand Voice Fine-Tuning</h5>
+                                <p>Train a custom GPT on a company's specific brand guidelines, high-performing copy, and tone of voice documents.</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 5&ndash;6: Multi-Modal Storytelling</h5>
+                                <p>Orchestrate text-to-image (Midjourney/DALL-E) and text-to-video (Sora/Runway) tools for cohesive visual campaigns.</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 7&ndash;8: Content Authenticity & Watermarking</h5>
+                                <p>Strategies for labeling AI content, maintaining consumer trust, and monitoring for "hallucinated" brand facts.</p>
+                            </div>
+                        </div>
+                        <div class="track-capstone">
+                            <div class="capstone-label">Capstone Project</div>
+                            <h5>"The Brand Bible 2.0"</h5>
+                            <p>Create a custom "Brand Bot" for on-brand content generation, along with a governance handbook for its enterprise use.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 4 -->
+                <div class="track-card track-4 fade-up">
+                    <div class="track-header">
+                        <div class="track-number">4</div>
+                        <h3>Predictive Product Marketing & Lifecycle Architecture</h3>
+                        <div class="track-meta-row">
+                            <span class="track-tag">Product Marketers (PMMs)</span>
+                            <span class="track-tag prospect-high">High Value</span>
+                        </div>
+                    </div>
+                    <div class="track-body">
+                        <button class="track-module-toggle" onclick="toggleModules(this)">
+                            &#128218; View Curriculum Modules
+                            <span class="toggle-arrow">&#9660;</span>
+                        </button>
+                        <div class="track-module-list">
+                            <div class="module-item">
+                                <h5>Weeks 3&ndash;4: Competitive Intelligence Agents</h5>
+                                <p>Automate tracking of competitor pricing, feature releases, and messaging changes using AI summarization tools.</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 5&ndash;6: Lifecycle Personalization</h5>
+                                <p>Generate dynamic, 1:1 user onboarding journeys and retention emails based on user behavior data.</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 7&ndash;8: Launch Simulation</h5>
+                                <p>Use AI to "wargame" a product launch, predicting customer objections, press questions, and market reaction.</p>
+                            </div>
+                        </div>
+                        <div class="track-capstone">
+                            <div class="capstone-label">Capstone Project</div>
+                            <h5>"The Launchpad"</h5>
+                            <p>A complete Go-To-Market (GTM) strategy generated and refined with AI, including landing page copy, email sequences, and sales battlecards.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 5 -->
+                <div class="track-card track-5 fade-up">
+                    <div class="track-header">
+                        <div class="track-number">5</div>
+                        <h3>Revenue Enablement & Sales Intelligence Systems</h3>
+                        <div class="track-meta-row">
+                            <span class="track-tag">Sales Enablement/Managers</span>
+                            <span class="track-tag prospect-explosive">Explosive Growth</span>
+                        </div>
+                    </div>
+                    <div class="track-body">
+                        <button class="track-module-toggle" onclick="toggleModules(this)">
+                            &#128218; View Curriculum Modules
+                            <span class="toggle-arrow">&#9660;</span>
+                        </button>
+                        <div class="track-module-list">
+                            <div class="module-item">
+                                <h5>Weeks 3&ndash;4: AI-Powered Coaching Systems</h5>
+                                <p>Set up systems that analyze sales calls (Gong/Chorus) and provide automated, personalized feedback to reps.</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 5&ndash;6: Dynamic Battlecards</h5>
+                                <p>Build knowledge bases that reps can query in real-time during calls (e.g., "How do I handle the pricing objection?").</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 7&ndash;8: Predictive Lead Scoring</h5>
+                                <p>Use AI to identify which leads are actually ready to buy, minimizing wasted sales time.</p>
+                            </div>
+                        </div>
+                        <div class="track-capstone">
+                            <div class="capstone-label">Capstone Project</div>
+                            <h5>"The Smart Sales Assistant"</h5>
+                            <p>Configure a custom agent acting as a 24/7 support bot for the sales team, answering questions about pricing, features, and competitors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 6 -->
+                <div class="track-card track-6 fade-up">
+                    <div class="track-header">
+                        <div class="track-number">6</div>
+                        <h3>Strategic Marketing Leadership in the AI Era</h3>
+                        <div class="track-meta-row">
+                            <span class="track-tag">Directors / VPs / CMOs</span>
+                            <span class="track-tag prospect-critical">Critical Need</span>
+                        </div>
+                    </div>
+                    <div class="track-body">
+                        <button class="track-module-toggle" onclick="toggleModules(this)">
+                            &#128218; View Curriculum Modules
+                            <span class="toggle-arrow">&#9660;</span>
+                        </button>
+                        <div class="track-module-list">
+                            <div class="module-item">
+                                <h5>Weeks 3&ndash;4: AI ROI & Investment</h5>
+                                <p>Build business cases for AI. Calculate "Time Saved" vs. "Value Added." Navigate the "Buy vs. Build" decision.</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 5&ndash;6: Organizational Change Management</h5>
+                                <p>Manage workforce anxiety, upskill teams, redesign org charts for an AI-native world. Handle the "human in the loop" transition.</p>
+                            </div>
+                            <div class="module-item">
+                                <h5>Weeks 7&ndash;8: Ethics, Law & Risk</h5>
+                                <p>Understand copyright (USCO rulings), deepfakes, and bias liability. Create an "AI Acceptable Use Policy."</p>
+                            </div>
+                        </div>
+                        <div class="track-capstone">
+                            <div class="capstone-label">Capstone Project</div>
+                            <h5>"The 2030 Roadmap"</h5>
+                            <p>Draft a 3-year AI transformation strategy for their current organization, including budget, hiring plan, and tech stack evolution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ROI & PRICING ===== -->
+    <section class="section section-alt" id="roi">
+        <div class="container">
+            <div class="fade-up">
+                <span class="section-label">Section 6</span>
+                <h2 class="section-title">ROI & Investment Strategy</h2>
+                <p class="section-subtitle">
+                    AI-fluent marketing roles command a 15&ndash;25% wage premium over generalist listings.
+                    The certificate is an arbitrage mechanism for salary growth.
+                </p>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Salary Premium Chart -->
+            <h3 class="fade-up" style="color: var(--nyit-navy); margin-bottom: 24px;">
+                The AI Upskilling Dividend: Projected Salary Premium in NYC (2026)
+            </h3>
+
+            <div class="roi-chart fade-up">
+                <div class="roi-bar-group">
+                    <span class="roi-bar-label">Marketing Manager</span>
+                    <div class="roi-bars">
+                        <div class="roi-bar current" style="--target-width: 76%;">$190,000</div>
+                        <div class="roi-bar ai-enabled" style="--target-width: 85%;">$211,500 (+$21.5K)</div>
+                    </div>
+                </div>
+                <div class="roi-bar-group">
+                    <span class="roi-bar-label">Market Research Analyst</span>
+                    <div class="roi-bars">
+                        <div class="roi-bar current" style="--target-width: 40%;">$99,600</div>
+                        <div class="roi-bar ai-enabled" style="--target-width: 49%;">$122,000 (+$22.4K)</div>
+                    </div>
+                </div>
+                <div class="roi-bar-group">
+                    <span class="roi-bar-label">General Marketer</span>
+                    <div class="roi-bars">
+                        <div class="roi-bar current" style="--target-width: 51%;">$128,000</div>
+                        <div class="roi-bar ai-enabled" style="--target-width: 61%;">$153,500 (+$25.5K)</div>
+                    </div>
+                </div>
+                <div class="roi-bar-group">
+                    <span class="roi-bar-label">Senior Marketing Lead</span>
+                    <div class="roi-bars">
+                        <div class="roi-bar current" style="--target-width: 56%;">$140,000</div>
+                        <div class="roi-bar ai-enabled" style="--target-width: 70%;">$175,000 (+$35K)</div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="fade-up" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">
+                Projections based on 2024&ndash;2025 AI wage premium trends (15&ndash;25%). Sources: Indeed, BLS, PwC AI Jobs Barometer.
+            </p>
+
+            <!-- Pricing -->
+            <div class="pricing-section fade-up" style="margin-top: 48px;">
+                <div>
+                    <h3 style="color: var(--nyit-navy); margin-bottom: 16px;">Pricing Strategy</h3>
+                    <p style="color: var(--text-secondary);">
+                        Strategically priced just under the common $2,500 corporate credit card approval limit,
+                        allowing students to expense the course without VP-level approval &mdash; reducing friction in the sales cycle.
+                    </p>
+
+                    <div class="competitor-pricing" style="margin-top: 24px;">
+                        <h4 style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">
+                            Competitor Benchmark
+                        </h4>
+                        <div class="comp-price-row">
+                            <span class="comp-name">NYU / Columbia</span>
+                            <span class="comp-cost">$2,500 &ndash; $4,000</span>
+                        </div>
+                        <div class="comp-price-row">
+                            <span class="comp-name">Cornell (eCornell)</span>
+                            <span class="comp-cost">~$3,600</span>
+                        </div>
+                        <div class="comp-price-row">
+                            <span class="comp-name">General Assembly</span>
+                            <span class="comp-cost">$3,000 &ndash; $4,000</span>
+                        </div>
+                        <div class="comp-price-row nyit-row">
+                            <span class="comp-name">NYIT (Recommended)</span>
+                            <span class="comp-cost">$2,495</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="pricing-card">
+                        <div class="price">$2,495</div>
+                        <div class="price-unit">per certificate</div>
+                        <p class="price-rationale">
+                            Under the $2,500 corporate approval threshold. 10&ndash;12 weeks of applied, project-based learning with hybrid instructor support.
+                        </p>
+                    </div>
+                    <div class="bundle-card">
+                        <div class="bundle-label">Master Certificate Bundle</div>
+                        <div class="bundle-price">$12,000</div>
+                        <div class="bundle-savings">All 6 tracks &mdash; ~20% savings</div>
+                        <p class="bundle-detail">Encourages long-term retention and higher Lifetime Value per student.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEXT STEPS ===== -->
+    <section class="section" id="next-steps">
+        <div class="container">
+            <div class="fade-up text-center">
+                <span class="section-label">Section 7</span>
+                <h2 class="section-title">Immediate Next Steps</h2>
+                <p class="section-subtitle mx-auto">
+                    The window to establish NYIT as the premier "AI Marketing" educator in NYC is open, but closing.
+                    By 2027, "AI Marketing" will simply be "Marketing."
+                </p>
+                <div class="divider center"></div>
+            </div>
+
+            <div class="steps-grid fade-up">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Validate Curriculum</h4>
+                    <p>Convene an Industry Advisory Board of NYC Marketing VPs to review the 6 tracks
+                        and ensure alignment with real-time hiring needs.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Build the "Foundation" Module</h4>
+                    <p>This is the MVP. Launch it as a standalone 2-week workshop to test demand
+                        and gather testimonials.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Launch Track 1 & Track 2</h4>
+                    <p>AI-Driven Market Intelligence (Analysts) and Marketing Operations (Ops)
+                        have the clearest ROI and lowest barrier to entry &mdash; ideal for early wins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CLOSING CTA ===== -->
+    <div class="closing-cta">
+        <div class="container">
+            <p class="cta-tagline">"Don't Let Your Job Be Automated. Automate Your Job."</p>
+            <h2>The Future of Marketing is Agentic.<br>NYIT is Ready to Lead.</h2>
+            <p>
+                By focusing on Agentic Workflows, targeting the Mid-Career Professional,
+                and emphasizing Applied Technical Skills, NYIT can solve the most pressing problem
+                in the NYC marketing labor market.
+            </p>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                NYIT AI-Integrated Marketing Certification Suite &mdash; Strategic Blueprint 2025&ndash;2030
+                <br>
+                <span style="color: rgba(255,255,255,0.3);">
+                    Prepared for the Office of the Dean &bull; New York Institute of Technology &bull;
+                    <a href="https://www.nyit.edu" target="_blank" rel="noopener">nyit.edu</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Toggle curriculum modules
+        function toggleModules(btn) {
+            const list = btn.nextElementSibling;
+            btn.classList.toggle('open');
+            list.classList.toggle('open');
+        }
+
+        // Mobile nav toggle
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            var nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for animations
+        var observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Animate bars within this element
+                    var bars = entry.target.querySelectorAll('.bar-fill, .roi-bar');
+                    bars.forEach(function(bar) {
+                        setTimeout(function() {
+                            bar.classList.add('animated');
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(function(el) {
+            observer.observe(el);
+        });
+
+        // Also observe bar chart containers even if not .fade-up
+        document.querySelectorAll('.bar-chart, .roi-chart').forEach(function(el) {
+            observer.observe(el);
+        });
+
+        // Active nav link highlighting
+        var sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', function() {
+            var scrollPos = window.scrollY + 100;
+            sections.forEach(function(section) {
+                var top = section.offsetTop;
+                var height = section.offsetHeight;
+                var id = section.getAttribute('id');
+                var link = document.querySelector('.nav-links a[href="#' + id + '"]');
+                if (link) {
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        document.querySelectorAll('.nav-links a').forEach(function(a) {
+                            a.classList.remove('active');
+                        });
+                        link.classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
