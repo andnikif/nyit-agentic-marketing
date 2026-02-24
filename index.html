@@ -998,7 +998,7 @@
         }
 
         .track-module-list.open {
-            max-height: 600px;
+            max-height: 2000px;
         }
 
         .module-item {
@@ -1367,6 +1367,114 @@
             margin-right: auto;
         }
 
+        /* ===== EXPANDED CURRICULUM DETAILS ===== */
+        .module-prereqs {
+            background: #FFF8E1;
+            border-left: 3px solid var(--nyit-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 12px 16px;
+            margin: 12px 0 4px;
+        }
+
+        .module-prereqs .prereqs-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--nyit-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 4px;
+        }
+
+        .module-prereqs p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            font-size: 0.82rem;
+        }
+
+        .module-objectives {
+            margin-top: 8px;
+            padding-left: 16px;
+        }
+
+        .module-objectives li {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 4px;
+            list-style-type: disc;
+        }
+
+        .module-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .tool-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 50px;
+            background: var(--nyit-blue-light);
+            color: var(--nyit-blue);
+        }
+
+        .module-deliverable {
+            margin-top: 8px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .module-deliverable strong {
+            font-style: normal;
+            color: var(--text-secondary);
+        }
+
+        .track-ms-connection {
+            margin-top: 14px;
+            background: linear-gradient(135deg, rgba(0,40,86,0.04), rgba(0,40,86,0.02));
+            border: 1px solid rgba(0,40,86,0.12);
+            border-left: 3px solid var(--nyit-navy);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 14px;
+        }
+
+        .track-ms-connection .ms-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--nyit-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+        }
+
+        .track-ms-connection .ms-courses {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .ms-course-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 50px;
+            background: rgba(0,40,86,0.08);
+            color: var(--nyit-navy);
+        }
+
+        .track-ms-connection p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
             .nav-links {
@@ -1460,8 +1568,8 @@
                     <span class="gold">Marketing Certification Suite</span>
                 </h1>
                 <p class="hero-tagline">
-                    Six AI-powered marketing certificates under the "Agentic Marketing" brand, positioning
-                    NYIT as the premier applied AI marketing educator in the New York metropolitan area.
+                    Six AI-powered marketing certificates under the "Agentic Marketing" brand &mdash; each a
+                    stepping stone toward NYIT's MS in Marketing Technology, AI and Analytics.
                 </p>
                 <div class="hero-stats">
                     <div class="hero-stat">
@@ -1957,23 +2065,75 @@
                             <span class="toggle-arrow">&#9660;</span>
                         </button>
                         <div class="track-module-list">
+                            <div class="module-prereqs">
+                                <div class="prereqs-label">Prerequisites</div>
+                                <p>Completion of Core Module. Basic familiarity with spreadsheets and web browsers. No coding or statistics background required.</p>
+                            </div>
                             <div class="module-item">
                                 <h5>Weeks 3&ndash;4: AI-Simulated Consumer Research</h5>
                                 <p>Define target personas and use AI tools to simulate consumer responses. Conduct AI-assisted focus groups to test messaging concepts.</p>
+                                <ul class="module-objectives">
+                                    <li>Design AI-powered synthetic focus groups using persona prompts</li>
+                                    <li>Evaluate AI-generated consumer insights against real data benchmarks</li>
+                                    <li>Identify and mitigate hallucination risks in AI research outputs</li>
+                                    <li>Build reusable prompt templates for recurring research needs</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">ChatGPT</span>
+                                    <span class="tool-tag">Claude</span>
+                                    <span class="tool-tag">Synthetic Users</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Synthetic focus group report with AI vs. real-data validation comparison
+                                </div>
                             </div>
                             <div class="module-item">
                                 <h5>Weeks 5&ndash;6: AI-Powered Data Analysis</h5>
                                 <p>Use AI tools to analyze large datasets through natural-language queries. Validate AI findings against raw data.</p>
+                                <ul class="module-objectives">
+                                    <li>Query structured datasets using natural-language AI interfaces</li>
+                                    <li>Cross-validate AI-generated insights against source data</li>
+                                    <li>Create automated data summaries for stakeholder presentations</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">ChatGPT Code Interpreter</span>
+                                    <span class="tool-tag">Google Sheets + AI</span>
+                                    <span class="tool-tag">Tableau</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Natural-language data analysis report on a real marketing dataset
+                                </div>
                             </div>
                             <div class="module-item">
-                                <h5>Weeks 7&ndash;8: Sentiment & Trend Prediction</h5>
+                                <h5>Weeks 7&ndash;8: Sentiment &amp; Trend Prediction</h5>
                                 <p>Build automated scrapers (no-code) to monitor social sentiment and predict micro-trends before they appear in traditional reports.</p>
+                                <ul class="module-objectives">
+                                    <li>Configure no-code social listening pipelines</li>
+                                    <li>Interpret AI-generated sentiment scores and confidence intervals</li>
+                                    <li>Build a trend-monitoring dashboard with automated alerts</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">Brandwatch</span>
+                                    <span class="tool-tag">Make / Zapier</span>
+                                    <span class="tool-tag">Google Trends</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Live sentiment dashboard with trend prediction alerts
+                                </div>
                             </div>
                         </div>
                         <div class="track-capstone">
                             <div class="capstone-label">Capstone Project</div>
                             <h5>"The Living Audit"</h5>
                             <p>Build a dashboard monitoring a brand's health using real-time AI analysis of public data, presenting findings to a simulated board.</p>
+                        </div>
+                        <div class="track-ms-connection">
+                            <div class="ms-label">MS Pathway Connection</div>
+                            <div class="ms-courses">
+                                <span class="ms-course-tag">Social-Media &amp; Digital Marketing Analytics</span>
+                                <span class="ms-course-tag">QANT 605: Statistical Thinking</span>
+                            </div>
+                            <p><strong>Certificate:</strong> Use AI tools for research and analysis. <strong>MS:</strong> Learn the statistical methods and experimental design behind them.</p>
                         </div>
                     </div>
                 </div>
@@ -1995,23 +2155,74 @@
                             <span class="toggle-arrow">&#9660;</span>
                         </button>
                         <div class="track-module-list">
+                            <div class="module-prereqs">
+                                <div class="prereqs-label">Prerequisites</div>
+                                <p>Completion of Core Module. Familiarity with at least one marketing platform (e.g., HubSpot, Mailchimp, Salesforce). No coding required.</p>
+                            </div>
                             <div class="module-item">
                                 <h5>Weeks 3&ndash;4: The AI Tech Stack Audit</h5>
                                 <p>Map an organization's tool ecosystem. Identify "automation gaps" where AI can bridge disconnected systems (e.g., HubSpot to Slack via AI).</p>
+                                <ul class="module-objectives">
+                                    <li>Map an organization's martech ecosystem and identify integration gaps</li>
+                                    <li>Evaluate AI-powered vs. traditional automation solutions</li>
+                                    <li>Produce a prioritized automation roadmap with ROI estimates</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">HubSpot</span>
+                                    <span class="tool-tag">Salesforce</span>
+                                    <span class="tool-tag">Lucidchart</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Martech audit report with gap analysis and automation roadmap
+                                </div>
                             </div>
                             <div class="module-item">
                                 <h5>Weeks 5&ndash;6: Building Automated Workflows</h5>
                                 <p>Design "If This, Then That" automations using Zapier, Make, or Microsoft Power Automate. Build end-to-end lead processing pipelines.</p>
+                                <ul class="module-objectives">
+                                    <li>Build multi-step automated workflows with conditional logic</li>
+                                    <li>Connect marketing platforms through API-based integrations</li>
+                                    <li>Design error-handling and fallback protocols for automated pipelines</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">Zapier</span>
+                                    <span class="tool-tag">Make</span>
+                                    <span class="tool-tag">Power Automate</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Working automated lead-processing pipeline with documentation
+                                </div>
                             </div>
                             <div class="module-item">
-                                <h5>Weeks 7&ndash;8: Data Hygiene & Governance</h5>
+                                <h5>Weeks 7&ndash;8: Data Hygiene &amp; Governance</h5>
                                 <p>Create automated data cleaning workflows to solve the "garbage in, garbage out" problem at scale.</p>
+                                <ul class="module-objectives">
+                                    <li>Design automated data validation and deduplication workflows</li>
+                                    <li>Implement data quality scoring for marketing databases</li>
+                                    <li>Create governance protocols for maintaining data integrity over time</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">OpenRefine</span>
+                                    <span class="tool-tag">ChatGPT</span>
+                                    <span class="tool-tag">dbt (intro)</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Data cleaning workflow with before/after quality audit
+                                </div>
                             </div>
                         </div>
                         <div class="track-capstone">
                             <div class="capstone-label">Capstone Project</div>
                             <h5>"The Autopilot Campaign"</h5>
                             <p>Design a fully automated lead-nurturing workflow requiring zero human touch for the first 3 touchpoints, with error-handling protocols.</p>
+                        </div>
+                        <div class="track-ms-connection">
+                            <div class="ms-label">MS Pathway Connection</div>
+                            <div class="ms-courses">
+                                <span class="ms-course-tag">First-Party Customer Data, AI &amp; Privacy</span>
+                                <span class="ms-course-tag">Capstone: Martech Architecture</span>
+                            </div>
+                            <p><strong>Certificate:</strong> Build automations in Zapier/Make. <strong>MS:</strong> Design enterprise data architecture and martech systems.</p>
                         </div>
                     </div>
                 </div>
@@ -2033,23 +2244,73 @@
                             <span class="toggle-arrow">&#9660;</span>
                         </button>
                         <div class="track-module-list">
+                            <div class="module-prereqs">
+                                <div class="prereqs-label">Prerequisites</div>
+                                <p>Completion of Core Module. Experience with content creation or brand management. No design software expertise required.</p>
+                            </div>
                             <div class="module-item">
                                 <h5>Weeks 3&ndash;4: Brand Voice Customization</h5>
                                 <p>Customize an AI assistant on a company's specific brand guidelines, high-performing copy, and tone of voice documents.</p>
+                                <ul class="module-objectives">
+                                    <li>Build a brand voice profile document for AI tool configuration</li>
+                                    <li>Configure a custom AI assistant trained on brand-specific guidelines</li>
+                                    <li>Evaluate AI-generated copy for brand consistency and tone accuracy</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">Custom GPTs</span>
+                                    <span class="tool-tag">Claude Projects</span>
+                                    <span class="tool-tag">Notion AI</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Custom AI brand assistant with style guide and sample outputs
+                                </div>
                             </div>
                             <div class="module-item">
-                                <h5>Weeks 5&ndash;6: Visual & Video Content Creation with AI</h5>
+                                <h5>Weeks 5&ndash;6: Visual &amp; Video Content Creation with AI</h5>
                                 <p>Use AI image generators (Midjourney/DALL-E) and video tools (Sora/Runway) for cohesive visual campaigns.</p>
+                                <ul class="module-objectives">
+                                    <li>Create brand-consistent visual assets using AI image generators</li>
+                                    <li>Produce short-form video content using AI video tools</li>
+                                    <li>Develop a multi-format content campaign across text, image, and video</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">Midjourney</span>
+                                    <span class="tool-tag">DALL-E</span>
+                                    <span class="tool-tag">Sora</span>
+                                    <span class="tool-tag">Runway</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Multi-format AI content campaign (text + image + video)
+                                </div>
                             </div>
                             <div class="module-item">
-                                <h5>Weeks 7&ndash;8: Content Authenticity & Watermarking</h5>
+                                <h5>Weeks 7&ndash;8: Content Authenticity &amp; Watermarking</h5>
                                 <p>Strategies for labeling AI content, maintaining consumer trust, and monitoring for AI-generated inaccuracies.</p>
+                                <ul class="module-objectives">
+                                    <li>Implement AI content labeling and disclosure standards</li>
+                                    <li>Design fact-checking workflows to catch AI-generated inaccuracies</li>
+                                    <li>Draft an organizational content governance policy</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">Content Credentials</span>
+                                    <span class="tool-tag">Originality.ai</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Content governance policy document with disclosure templates
+                                </div>
                             </div>
                         </div>
                         <div class="track-capstone">
                             <div class="capstone-label">Capstone Project</div>
                             <h5>"The Brand Bible 2.0"</h5>
                             <p>Create a custom "Brand Content Assistant" for on-brand content generation, along with a governance handbook for its enterprise use.</p>
+                        </div>
+                        <div class="track-ms-connection">
+                            <div class="ms-label">MS Pathway Connection</div>
+                            <div class="ms-courses">
+                                <span class="ms-course-tag">AI for Content Creation &amp; Personalized Experiences</span>
+                            </div>
+                            <p><strong>Certificate:</strong> Use AI content generators effectively. <strong>MS:</strong> Evaluate outputs rigorously and design personalization experiments.</p>
                         </div>
                     </div>
                 </div>
@@ -2070,23 +2331,73 @@
                             <span class="toggle-arrow">&#9660;</span>
                         </button>
                         <div class="track-module-list">
+                            <div class="module-prereqs">
+                                <div class="prereqs-label">Prerequisites</div>
+                                <p>Completion of Core Module. Familiarity with product marketing concepts or campaign planning. No coding required.</p>
+                            </div>
                             <div class="module-item">
                                 <h5>Weeks 3&ndash;4: AI-Powered Competitive Analysis</h5>
                                 <p>Automate tracking of competitor pricing, feature releases, and messaging changes using AI summarization tools.</p>
+                                <ul class="module-objectives">
+                                    <li>Build automated competitor monitoring dashboards</li>
+                                    <li>Use AI summarization to distill competitive intelligence reports</li>
+                                    <li>Create dynamic competitive positioning documents</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">Crayon</span>
+                                    <span class="tool-tag">Klue</span>
+                                    <span class="tool-tag">ChatGPT</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Automated competitive intelligence dashboard with AI-generated summaries
+                                </div>
                             </div>
                             <div class="module-item">
                                 <h5>Weeks 5&ndash;6: Lifecycle Personalization</h5>
                                 <p>Generate dynamic, 1:1 user onboarding journeys and retention emails based on user behavior data.</p>
+                                <ul class="module-objectives">
+                                    <li>Design behavior-triggered email sequences using AI-generated content</li>
+                                    <li>Build personalized onboarding journeys with dynamic content blocks</li>
+                                    <li>Measure and optimize lifecycle campaign performance</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">HubSpot</span>
+                                    <span class="tool-tag">Customer.io</span>
+                                    <span class="tool-tag">ChatGPT</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Personalized onboarding journey with AI-generated content variations
+                                </div>
                             </div>
                             <div class="module-item">
                                 <h5>Weeks 7&ndash;8: AI-Powered Launch Planning</h5>
                                 <p>Use AI to simulate a product launch, predicting customer objections, press questions, and market reaction.</p>
+                                <ul class="module-objectives">
+                                    <li>Simulate product launch scenarios using AI role-playing</li>
+                                    <li>Generate and stress-test messaging against predicted objections</li>
+                                    <li>Build a comprehensive launch readiness checklist with AI assistance</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">ChatGPT</span>
+                                    <span class="tool-tag">Claude</span>
+                                    <span class="tool-tag">Scenario Modeling</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> AI-powered launch readiness report with objection playbook
+                                </div>
                             </div>
                         </div>
                         <div class="track-capstone">
                             <div class="capstone-label">Capstone Project</div>
                             <h5>"The Launchpad"</h5>
                             <p>A complete Go-To-Market (GTM) strategy generated and refined with AI, including landing page copy, email sequences, and sales battlecards.</p>
+                        </div>
+                        <div class="track-ms-connection">
+                            <div class="ms-label">MS Pathway Connection</div>
+                            <div class="ms-courses">
+                                <span class="ms-course-tag">Marketing Experimentation &amp; Performance Measurement</span>
+                            </div>
+                            <p><strong>Certificate:</strong> Use AI for launch planning and competitive analysis. <strong>MS:</strong> Master experimental design and causal measurement methods.</p>
                         </div>
                     </div>
                 </div>
@@ -2107,23 +2418,73 @@
                             <span class="toggle-arrow">&#9660;</span>
                         </button>
                         <div class="track-module-list">
+                            <div class="module-prereqs">
+                                <div class="prereqs-label">Prerequisites</div>
+                                <p>Completion of Core Module. Current or recent experience with a CRM platform (e.g., Salesforce, HubSpot). No coding required.</p>
+                            </div>
                             <div class="module-item">
                                 <h5>Weeks 3&ndash;4: AI-Powered Coaching Systems</h5>
                                 <p>Set up systems that analyze sales calls (Gong/Chorus) and provide automated, personalized feedback to reps.</p>
+                                <ul class="module-objectives">
+                                    <li>Configure AI-powered call analysis for sales coaching</li>
+                                    <li>Design personalized coaching feedback reports from AI insights</li>
+                                    <li>Measure coaching effectiveness through performance metrics</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">Gong</span>
+                                    <span class="tool-tag">Chorus</span>
+                                    <span class="tool-tag">ChatGPT</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Sales coaching report generated from AI call analysis
+                                </div>
                             </div>
                             <div class="module-item">
                                 <h5>Weeks 5&ndash;6: Real-Time Sales Knowledge Bases</h5>
                                 <p>Build knowledge bases that reps can query in real-time during calls (e.g., "How do I handle the pricing objection?").</p>
+                                <ul class="module-objectives">
+                                    <li>Structure and load sales knowledge into an AI-queryable format</li>
+                                    <li>Build interactive knowledge base with real-time search capability</li>
+                                    <li>Test and refine accuracy of AI-generated sales responses</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">Guru</span>
+                                    <span class="tool-tag">Notion AI</span>
+                                    <span class="tool-tag">Custom GPTs</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Interactive real-time sales knowledge base with tested Q&amp;A pairs
+                                </div>
                             </div>
                             <div class="module-item">
                                 <h5>Weeks 7&ndash;8: AI-Enhanced Lead Qualification</h5>
                                 <p>Use AI to identify which leads are actually ready to buy, minimizing wasted sales time.</p>
+                                <ul class="module-objectives">
+                                    <li>Design lead scoring criteria using behavioral and demographic signals</li>
+                                    <li>Configure AI-powered lead scoring within a CRM platform</li>
+                                    <li>Validate scoring model accuracy against historical conversion data</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">HubSpot AI</span>
+                                    <span class="tool-tag">Salesforce Einstein</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Lead scoring model with validation report and optimization recommendations
+                                </div>
                             </div>
                         </div>
                         <div class="track-capstone">
                             <div class="capstone-label">Capstone Project</div>
                             <h5>"The Smart Sales Assistant"</h5>
                             <p>Configure a custom AI assistant acting as a 24/7 support tool for the sales team, answering questions about pricing, features, and competitors.</p>
+                        </div>
+                        <div class="track-ms-connection">
+                            <div class="ms-label">MS Pathway Connection</div>
+                            <div class="ms-courses">
+                                <span class="ms-course-tag">First-Party Customer Data, AI &amp; Privacy</span>
+                                <span class="ms-course-tag">BUSA 601: Data Storytelling</span>
+                            </div>
+                            <p><strong>Certificate:</strong> Use CRM AI tools for sales enablement. <strong>MS:</strong> Master data architecture, identity resolution, and strategic communication.</p>
                         </div>
                     </div>
                 </div>
@@ -2144,23 +2505,74 @@
                             <span class="toggle-arrow">&#9660;</span>
                         </button>
                         <div class="track-module-list">
+                            <div class="module-prereqs">
+                                <div class="prereqs-label">Prerequisites</div>
+                                <p>Completion of Core Module. 5+ years of marketing leadership experience. Recommended: completion of at least one other certificate track.</p>
+                            </div>
                             <div class="module-item">
-                                <h5>Weeks 3&ndash;4: AI ROI & Investment</h5>
+                                <h5>Weeks 3&ndash;4: AI ROI &amp; Investment</h5>
                                 <p>Build business cases for AI. Calculate "Time Saved" vs. "Value Added." Navigate the "Buy vs. Build" decision.</p>
+                                <ul class="module-objectives">
+                                    <li>Build a financial business case for AI adoption in marketing</li>
+                                    <li>Calculate ROI using time-saved and value-added frameworks</li>
+                                    <li>Evaluate build vs. buy decisions for AI marketing tools</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">Excel / Sheets</span>
+                                    <span class="tool-tag">ROI Calculators</span>
+                                    <span class="tool-tag">ChatGPT</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> AI investment business case with financial projections
+                                </div>
                             </div>
                             <div class="module-item">
                                 <h5>Weeks 5&ndash;6: Organizational Change Management</h5>
                                 <p>Manage workforce anxiety, upskill teams, redesign org charts for an AI-native world. Handle the "human in the loop" transition.</p>
+                                <ul class="module-objectives">
+                                    <li>Assess organizational AI readiness across teams</li>
+                                    <li>Design upskilling programs and change management plans</li>
+                                    <li>Navigate workforce anxiety and role transitions</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">Miro</span>
+                                    <span class="tool-tag">Survey Tools</span>
+                                    <span class="tool-tag">Change Frameworks</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> Organizational AI readiness assessment with upskilling roadmap
+                                </div>
                             </div>
                             <div class="module-item">
-                                <h5>Weeks 7&ndash;8: Ethics, Law & Risk</h5>
+                                <h5>Weeks 7&ndash;8: Ethics, Law &amp; Risk</h5>
                                 <p>Understand copyright (USCO rulings), deepfakes, and bias liability. Create an "AI Acceptable Use Policy."</p>
+                                <ul class="module-objectives">
+                                    <li>Interpret current AI copyright law and liability frameworks</li>
+                                    <li>Identify bias and deepfake risks in marketing AI applications</li>
+                                    <li>Draft an organizational AI Acceptable Use Policy</li>
+                                </ul>
+                                <div class="module-tools">
+                                    <span class="tool-tag">Legal Databases</span>
+                                    <span class="tool-tag">Policy Templates</span>
+                                    <span class="tool-tag">Risk Matrices</span>
+                                </div>
+                                <div class="module-deliverable">
+                                    <strong>Deliverable:</strong> AI Acceptable Use Policy draft with risk assessment
+                                </div>
                             </div>
                         </div>
                         <div class="track-capstone">
                             <div class="capstone-label">Capstone Project</div>
                             <h5>"The 2030 Roadmap"</h5>
                             <p>Draft a 3-year AI transformation strategy for their current organization, including budget, hiring plan, and tech stack evolution.</p>
+                        </div>
+                        <div class="track-ms-connection">
+                            <div class="ms-label">MS Pathway Connection</div>
+                            <div class="ms-courses">
+                                <span class="ms-course-tag">MRKT 620: Strategic Marketing &amp; Branding</span>
+                                <span class="ms-course-tag">Capstone: Martech Architecture</span>
+                            </div>
+                            <p><strong>Certificate:</strong> AI governance and ethics at the executive level. <strong>MS:</strong> Analytical depth and architectural thinking for leadership decisions.</p>
                         </div>
                     </div>
                 </div>
@@ -2172,30 +2584,125 @@
     <section class="section section-alt" id="ms-pathway">
         <div class="container">
             <div class="fade-up text-center">
-                <span class="section-label">Pathway to Graduate Study</span>
-                <h2 class="section-title">Your Path to an MS in Marketing Technology</h2>
+                <span class="section-label">Section 6 &mdash; Pathway to Graduate Study</span>
+                <h2 class="section-title">Your Path to an MS in Marketing Technology, AI and Analytics</h2>
                 <p class="section-subtitle mx-auto">
-                    These certificates are designed as on-ramps to NYIT's MS in Marketing Technology &amp; Social Media Analytics (launching Fall 2026).
-                    Each certificate earns graduate credit toward the degree.
+                    These certificates are designed as complementary on-ramps to NYIT's
+                    MS in Marketing Technology, AI and Analytics (launching Fall 2026).
+                    Each certificate earns a $500 tuition scholarship toward the degree.
                 </p>
                 <div class="divider center"></div>
             </div>
 
-            <!-- Credit Rationale -->
+            <!-- Scholarship Model Rationale -->
             <div class="nyit-position fade-up">
-                <h3 style="color: var(--nyit-gold); margin-bottom: 16px;">How Credits Work</h3>
+                <h3 style="color: var(--nyit-gold); margin-bottom: 16px;">How the Scholarship Works</h3>
                 <p>
-                    <strong>Each certificate = 1 graduate credit</strong> toward the MS (30 credits total).
-                    10&ndash;12 weeks of applied coursework at professional depth maps to 1 credit of graduate-level instruction &mdash;
-                    a conservative, accreditation-friendly approach.
+                    <strong>Each certificate = $500 tuition scholarship</strong> toward the MS (30 credits).
+                    The certificates provide applied, practitioner-level AI skills; the MS provides the
+                    analytical and architectural depth behind them. They complement each other rather than overlap.
                 </p>
                 <p style="margin-top: 12px;">
-                    <strong style="color: var(--nyit-gold);">Completing all 6 certificates = 6 credits banked = 20% of the degree done</strong>
-                    before formal enrollment.
+                    <strong style="color: var(--nyit-gold);">Completing all 6 certificates = $3,000 scholarship toward MS tuition</strong>
+                    &mdash; a meaningful head start on your graduate investment.
                 </p>
             </div>
 
-            <!-- 3-Step Pathway -->
+            <!-- Two Layers Explanation -->
+            <div class="fade-up" style="margin-top: 36px;">
+                <h3 style="color: var(--nyit-navy); margin-bottom: 16px;">Two Complementary Layers of Learning</h3>
+                <div class="grid-2">
+                    <div class="card" style="border-left: 4px solid var(--nyit-gold);">
+                        <h4 style="color: var(--nyit-gold); margin-bottom: 8px;">Certificates: Applied Practitioner</h4>
+                        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0;">
+                            Use AI tools to execute real marketing tasks. Build automations, generate content,
+                            analyze data, and manage campaigns with AI. Leave with a working project portfolio.
+                        </p>
+                    </div>
+                    <div class="card" style="border-left: 4px solid var(--nyit-navy);">
+                        <h4 style="color: var(--nyit-navy); margin-bottom: 8px;">MS Degree: Analytical &amp; Architectural</h4>
+                        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0;">
+                            Understand the statistics, experimental design, data architecture, and
+                            strategic frameworks behind the tools. Design and govern systems, not just use them.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate-to-MS Mapping Table -->
+            <div class="fade-up" style="margin-top: 36px;">
+                <h3 style="color: var(--nyit-navy); margin-bottom: 16px;">How Each Certificate Feeds the MS</h3>
+                <table class="pain-table">
+                    <thead>
+                        <tr>
+                            <th style="width:25%">Certificate Track</th>
+                            <th style="width:30%">MS Courses It Prepares You For</th>
+                            <th style="width:45%">How They Complement Each Other</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Track 1:</strong> Market Research &amp; Consumer Insights</td>
+                            <td>Social-Media Analytics + Statistical Thinking</td>
+                            <td>Certificate: Use AI for research. MS: Learn the statistics and methods behind it.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Track 2:</strong> Marketing Ops &amp; AI Workflow</td>
+                            <td>First-Party Data + Martech Capstone</td>
+                            <td>Certificate: Build automations in Zapier/Make. MS: Design enterprise data architecture.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Track 3:</strong> Brand Strategy &amp; Content Mgmt</td>
+                            <td>AI for Content Creation &amp; Personalization</td>
+                            <td>Certificate: Use AI generators. MS: Evaluate outputs and design personalization experiments.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Track 4:</strong> Product Marketing &amp; Campaigns</td>
+                            <td>Marketing Experimentation &amp; Measurement</td>
+                            <td>Certificate: AI for launch planning. MS: Experimental design and causal measurement.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Track 5:</strong> Sales Enablement &amp; AI CRM</td>
+                            <td>First-Party Data + Data Storytelling</td>
+                            <td>Certificate: Use CRM AI tools. MS: Data architecture and identity resolution.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Track 6:</strong> Strategic Leadership</td>
+                            <td>Strategic Marketing + Capstone</td>
+                            <td>Certificate: Governance/ethics at exec level. MS: Analytical depth for leadership.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- MS Curriculum Overview -->
+            <div class="fade-up" style="margin-top: 36px;">
+                <h3 style="color: var(--nyit-navy); margin-bottom: 16px;">MS Program Curriculum (30 Credits)</h3>
+                <div class="grid-2">
+                    <div class="card" style="border-top: 4px solid var(--nyit-navy);">
+                        <h4 style="color: var(--nyit-navy); margin-bottom: 12px;">Core Courses (15 credits)</h4>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                            <p style="margin-bottom: 6px;"><strong>BUSA 660:</strong> Foundations of AI &amp; Machine Learning</p>
+                            <p style="margin-bottom: 6px;"><strong>BUSA 602:</strong> Programming for Data Analysis (Python/SQL)</p>
+                            <p style="margin-bottom: 6px;"><strong>QANT 605:</strong> Statistical Thinking &amp; Problem Solving</p>
+                            <p style="margin-bottom: 6px;"><strong>BUSA 601:</strong> Data Storytelling &amp; Communication</p>
+                            <p style="margin-bottom: 0;"><strong>MRKT 620:</strong> Strategic Marketing &amp; Branding</p>
+                        </div>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--nyit-gold);">
+                        <h4 style="color: var(--nyit-navy); margin-bottom: 12px;">Specialized Courses (15 credits)</h4>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                            <p style="margin-bottom: 6px;">First-Party Customer Data, AI &amp; Privacy</p>
+                            <p style="margin-bottom: 6px;">AI for Content Creation &amp; Personalized Experiences</p>
+                            <p style="margin-bottom: 6px;">Social-Media &amp; Digital Marketing Analytics</p>
+                            <p style="margin-bottom: 6px;">Marketing Experimentation &amp; Performance Measurement</p>
+                            <p style="margin-bottom: 0;"><strong>Capstone:</strong> Marketing AI, Analytics &amp; Martech Architecture</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-Step Pathway (Scholarship Model) -->
             <div class="grid-3 fade-up" style="margin-top: 36px;">
                 <div class="card" style="border-top: 4px solid var(--nyit-gold); text-align: center;">
                     <div style="font-size: 2rem; font-weight: 800; color: var(--nyit-navy); margin-bottom: 8px;">Year 1</div>
@@ -2204,7 +2711,7 @@
                         $4,497 via IRS Sec. 127 &mdash; fully tax-free through your employer
                     </p>
                     <div style="background: var(--nyit-blue-light); border-radius: 8px; padding: 10px; font-weight: 700; color: var(--nyit-navy); font-size: 0.9rem;">
-                        3 MS Credits Earned
+                        $1,500 MS Scholarship Earned
                     </div>
                 </div>
                 <div class="card" style="border-top: 4px solid var(--nyit-gold); text-align: center;">
@@ -2214,17 +2721,17 @@
                         $4,497 via Sec. 127 &mdash; same tax-free employer benefit
                     </p>
                     <div style="background: var(--nyit-blue-light); border-radius: 8px; padding: 10px; font-weight: 700; color: var(--nyit-navy); font-size: 0.9rem;">
-                        6 MS Credits Total
+                        $3,000 Total MS Scholarship
                     </div>
                 </div>
                 <div class="card" style="border-top: 4px solid var(--nyit-gold); text-align: center;">
                     <div style="font-size: 2rem; font-weight: 800; color: var(--nyit-navy); margin-bottom: 8px;">Year 3+</div>
                     <h4 style="color: var(--nyit-navy); margin-bottom: 12px;">Enroll in the MS Program</h4>
                     <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 12px;">
-                        Start with 6 credits already done &mdash; finish faster with a head start
+                        Start with $3,000 off tuition &mdash; plus the applied skills foundation
                     </p>
                     <div style="background: #E8F5E9; border-radius: 8px; padding: 10px; font-weight: 700; color: #2E7D32; font-size: 0.9rem;">
-                        20% of Degree Complete
+                        Scholarship + Practitioner Foundation
                     </div>
                 </div>
             </div>
@@ -2372,9 +2879,10 @@
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
-                    <h4>Formalize the MS Pathway</h4>
-                    <p>Coordinate with the Graduate College to map certificate credits into the
-                        MS in Marketing Technology &amp; Social Media Analytics (Fall 2026 launch).</p>
+                    <h4>Formalize the MS Scholarship Pathway</h4>
+                    <p>Coordinate with the Graduate College to finalize the $500-per-certificate
+                        tuition scholarship toward the MS in Marketing Technology, AI and Analytics (Fall 2026 launch).
+                        Up to $3,000 off for students who complete all 6 certificates.</p>
                 </div>
             </div>
         </div>
