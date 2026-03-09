@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYIT AI-Integrated Marketing Certificates | Learn. Build. Lead.</title>
+    <style>
+        /* ===== CSS CUSTOM PROPERTIES ===== */
+        :root {
+            --nyit-navy: #002856;
+            --nyit-navy-dark: #001a3a;
+            --nyit-gold: #F0AB00;
+            --nyit-gold-light: #FFD54F;
+            --nyit-blue: #0066CC;
+            --nyit-blue-light: #E3F2FD;
+            --bg-light: #F8F9FA;
+            --bg-white: #FFFFFF;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.7;
+            background: var(--bg-white);
+            overflow-x: hidden;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+        h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+        h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+        h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+        h4 { font-size: 1.15rem; }
+        p { margin-bottom: 1rem; }
+        .section-label {
+            display: inline-block; font-size: 0.75rem; font-weight: 700;
+            letter-spacing: 0.15em; text-transform: uppercase; color: var(--nyit-gold);
+            background: rgba(240, 171, 0, 0.1); padding: 6px 16px; border-radius: 50px; margin-bottom: 1rem;
+        }
+        .section-title { color: var(--nyit-navy); margin-bottom: 1rem; }
+        .section-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; line-height: 1.8; }
+
+        /* ===== LAYOUT ===== */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section { padding: 80px 0; }
+        .section-alt { background: var(--bg-light); }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .text-center { text-align: center; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .divider { width: 60px; height: 3px; background: var(--nyit-gold); margin: 20px 0 32px 0; border-radius: 2px; }
+        .divider.center { margin-left: auto; margin-right: auto; }
+        .card {
+            background: var(--bg-white); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 24px; transition: var(--transition);
+        }
+        .card:hover { box-shadow: var(--shadow-md); }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(0, 40, 86, 0.97); backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08); transition: var(--transition);
+        }
+        .nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 24px;
+        }
+        .nav-brand {
+            display: flex; align-items: center; gap: 12px; text-decoration: none;
+            color: #fff; font-weight: 700; font-size: 1.05rem;
+        }
+        .nav-brand .brand-icon {
+            width: 36px; height: 36px; background: var(--nyit-gold); border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; font-size: 0.7rem; color: var(--nyit-navy); letter-spacing: 0.05em;
+        }
+        .nav-links { display: flex; list-style: none; gap: 4px; }
+        .nav-links a {
+            display: block; color: rgba(255,255,255,0.75); text-decoration: none;
+            font-size: 0.82rem; font-weight: 500; padding: 8px 14px;
+            border-radius: 6px; transition: var(--transition);
+        }
+        .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .nav-toggle {
+            display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;
+        }
+        @media (max-width: 900px) {
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none; position: absolute; top: 64px; left: 0; right: 0;
+                background: var(--nyit-navy); flex-direction: column; padding: 16px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .nav-links.open { display: flex; }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative; min-height: 85vh; display: flex; align-items: center;
+            background: linear-gradient(135deg, var(--nyit-navy) 0%, var(--nyit-navy-dark) 60%, #001030 100%);
+            padding-top: 80px; overflow: hidden;
+        }
+        .hero-grid {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; }
+        .hero-badge {
+            display: inline-block; font-size: 0.75rem; font-weight: 700;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--nyit-gold); background: rgba(240, 171, 0, 0.12);
+            padding: 8px 20px; border-radius: 50px; margin-bottom: 24px;
+            border: 1px solid rgba(240, 171, 0, 0.2);
+        }
+        .hero h1 { color: #fff; margin-bottom: 20px; }
+        .hero .gold { color: var(--nyit-gold); }
+        .hero-tagline { color: rgba(255,255,255,0.75); font-size: 1.15rem; line-height: 1.8; max-width: 650px; }
+        .hero-stats {
+            display: flex; gap: 36px; margin-top: 40px; flex-wrap: wrap;
+        }
+        .hero-stat .number { font-size: 1.8rem; font-weight: 800; color: var(--nyit-gold); }
+        .hero-stat .label { font-size: 0.78rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: 8px; margin-top: 36px;
+            padding: 14px 32px; background: var(--nyit-gold); color: var(--nyit-navy);
+            font-weight: 700; font-size: 0.95rem; text-decoration: none;
+            border-radius: var(--radius-sm); transition: var(--transition);
+        }
+        .hero-cta:hover { background: var(--nyit-gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,171,0,0.3); }
+
+        /* ===== THESIS BANNER ===== */
+        .thesis-banner {
+            background: var(--nyit-gold); padding: 28px 0;
+        }
+        .thesis-content { text-align: center; }
+        .thesis-quote { font-size: 1.3rem; font-weight: 700; color: var(--nyit-navy); margin-bottom: 6px; }
+        .thesis-sub { font-size: 0.92rem; color: rgba(0,40,86,0.75); max-width: 700px; margin: 0 auto; }
+
+        /* ===== LOGIC FLOW ===== */
+        .logic-flow {
+            display: flex; align-items: center; justify-content: center; gap: 16px;
+            flex-wrap: wrap; margin: 40px 0 20px;
+        }
+        .logic-step {
+            background: var(--bg-white); border: 2px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 20px 28px; text-align: center;
+            min-width: 200px; transition: var(--transition);
+        }
+        .logic-step:hover { border-color: var(--nyit-gold); box-shadow: var(--shadow-md); }
+        .logic-step .step-num {
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--text-muted); margin-bottom: 6px;
+        }
+        .logic-step h4 { color: var(--nyit-navy); font-size: 1rem; }
+        .logic-step p { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 4px; }
+        .logic-arrow { font-size: 1.5rem; color: var(--nyit-gold); font-weight: 700; }
+        @media (max-width: 700px) {
+            .logic-arrow { transform: rotate(90deg); }
+            .logic-flow { flex-direction: column; }
+        }
+
+        /* ===== CLUSTER CARDS ===== */
+        .cluster-card {
+            background: var(--bg-white); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 20px; transition: var(--transition);
+        }
+        .cluster-card:hover { box-shadow: var(--shadow-md); }
+        .cluster-card h4 { color: var(--nyit-navy); margin-bottom: 2px; }
+        .cluster-subtitle { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px; }
+        .cluster-stat-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 6px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.85rem;
+        }
+        .cluster-stat-row:last-child { border-bottom: none; }
+        .stat-label { color: var(--text-secondary); }
+        .stat-value { font-weight: 600; color: var(--text-primary); }
+
+        /* ===== GAP SECTION ===== */
+        .gap-levels {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px; margin: 24px 0;
+        }
+        .level-card {
+            border-radius: var(--radius-md); padding: 24px;
+            border-left: 4px solid var(--border-color);
+        }
+        .level-card.entry { background: #f0fdf4; border-color: #86efac; }
+        .level-card.mid { background: #fef3c7; border-color: var(--nyit-gold); }
+        .level-card.senior { background: #eff6ff; border-color: var(--nyit-blue); }
+        .level-card h4 { margin-bottom: 8px; font-size: 1rem; }
+        .level-card p { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0; }
+
+        .gap-universal {
+            background: linear-gradient(135deg, var(--nyit-navy), var(--nyit-navy-dark));
+            border-radius: var(--radius-md); padding: 28px 32px; margin-top: 32px;
+        }
+        .gap-universal h3 { color: var(--nyit-gold); margin-bottom: 12px; }
+        .gap-universal p { color: rgba(255,255,255,0.8); margin-bottom: 0; }
+        .gap-universal .highlight { color: var(--nyit-gold); font-weight: 700; }
+
+        /* ===== AGENTIC SHIFT ===== */
+        .agentic-box {
+            background: var(--bg-white); border: 2px solid var(--nyit-gold); border-radius: var(--radius-md);
+            padding: 28px; margin-top: 32px;
+        }
+        .agentic-box h3 { color: var(--nyit-navy); margin-bottom: 12px; }
+        .state-compare {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;
+        }
+        .state-card {
+            border-radius: var(--radius-sm); padding: 16px; font-size: 0.9rem;
+        }
+        .state-card.current { background: #f1f5f9; }
+        .state-card.future { background: #fef9ee; border: 1px solid rgba(240,171,0,0.3); }
+        .state-card .state-label {
+            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 6px;
+        }
+        .state-card.future .state-label { color: var(--nyit-gold); }
+        @media (max-width: 600px) { .state-compare { grid-template-columns: 1fr; } }
+
+        /* ===== CERTIFICATE CARDS ===== */
+        .cert-card {
+            background: var(--bg-white); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); overflow: hidden; transition: var(--transition);
+        }
+        .cert-card:hover { box-shadow: var(--shadow-lg); }
+        .cert-header {
+            padding: 28px 28px 20px; border-bottom: 1px solid var(--border-color);
+        }
+        .cert-number {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; border-radius: 50%; font-weight: 800; font-size: 1rem;
+            margin-bottom: 12px; color: #fff;
+        }
+        .cert-1 .cert-number { background: var(--nyit-blue); }
+        .cert-2 .cert-number { background: var(--nyit-gold); color: var(--nyit-navy); }
+        .cert-3 .cert-number { background: var(--nyit-navy); }
+        .cert-header h3 { margin-bottom: 6px; }
+        .cert-header .cert-subtitle { font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px; }
+        .cert-meta {
+            display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.82rem; color: var(--text-muted);
+        }
+        .cert-meta span { display: flex; align-items: center; gap: 4px; }
+        .cert-body { padding: 24px 28px; }
+        .cert-who {
+            background: var(--bg-light); border-radius: var(--radius-sm);
+            padding: 14px 16px; margin-bottom: 20px; font-size: 0.88rem;
+        }
+        .cert-who strong { color: var(--nyit-navy); }
+
+        /* Module toggle */
+        .cert-module-toggle {
+            width: 100%; background: none; border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm); padding: 12px 16px;
+            font-size: 0.88rem; font-weight: 600; color: var(--nyit-navy);
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+            transition: var(--transition);
+        }
+        .cert-module-toggle:hover { background: var(--bg-light); }
+        .cert-module-toggle .toggle-arrow { transition: transform 0.3s; }
+        .cert-module-toggle.open .toggle-arrow { transform: rotate(180deg); }
+        .cert-module-list {
+            max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+        }
+        .cert-module-list.open { max-height: 3000px; }
+        .module-item {
+            padding: 16px 0; border-bottom: 1px solid #f0f0f0;
+        }
+        .module-item:last-child { border-bottom: none; }
+        .module-item h5 { color: var(--nyit-navy); margin-bottom: 6px; font-size: 0.95rem; }
+        .module-item p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; }
+        .module-objectives {
+            list-style: none; padding: 0; margin: 8px 0;
+        }
+        .module-objectives li {
+            font-size: 0.83rem; color: var(--text-secondary); padding: 3px 0 3px 18px;
+            position: relative;
+        }
+        .module-objectives li::before {
+            content: "\2713"; position: absolute; left: 0; color: var(--nyit-gold); font-weight: 700;
+        }
+        .tool-tag {
+            display: inline-block; background: var(--nyit-blue-light); color: var(--nyit-blue);
+            font-size: 0.72rem; font-weight: 600; padding: 3px 10px;
+            border-radius: 50px; margin: 2px 4px 2px 0;
+        }
+        .module-deliverable {
+            font-size: 0.83rem; color: var(--text-secondary); margin-top: 8px;
+            padding: 8px 12px; background: #fafafa; border-radius: var(--radius-sm);
+            border-left: 3px solid var(--nyit-gold);
+        }
+
+        /* Capstone */
+        .cert-capstone {
+            background: linear-gradient(135deg, var(--nyit-navy), var(--nyit-navy-dark));
+            border-radius: var(--radius-sm); padding: 20px; margin-top: 20px;
+        }
+        .capstone-label {
+            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.1em; color: var(--nyit-gold); margin-bottom: 6px;
+        }
+        .cert-capstone h5 { color: #fff; margin-bottom: 6px; font-size: 1rem; }
+        .cert-capstone p { color: rgba(255,255,255,0.75); font-size: 0.85rem; margin-bottom: 0; }
+
+        /* Project options */
+        .project-options {
+            margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+        }
+        .project-option {
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+            border-radius: var(--radius-sm); padding: 10px 12px;
+            font-size: 0.8rem; color: rgba(255,255,255,0.8);
+        }
+        .project-option strong { color: var(--nyit-gold); font-size: 0.72rem; display: block; margin-bottom: 2px; }
+        @media (max-width: 600px) { .project-options { grid-template-columns: 1fr; } }
+
+        /* MS Connection */
+        .cert-ms {
+            margin-top: 16px; padding: 14px 16px; border-left: 3px solid var(--nyit-navy);
+            background: #f8fafc; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        .ms-label {
+            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.1em; color: var(--nyit-navy); margin-bottom: 6px;
+        }
+        .ms-course-tag {
+            display: inline-block; background: var(--nyit-navy); color: #fff;
+            font-size: 0.72rem; font-weight: 600; padding: 3px 10px;
+            border-radius: 50px; margin: 2px 4px 2px 0;
+        }
+        .cert-ms p { font-size: 0.82rem; color: var(--text-secondary); margin-top: 8px; margin-bottom: 0; }
+
+        /* ===== COMPETITIVE ===== */
+        .competitor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .competitor-card {
+            background: var(--bg-white); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 24px; transition: var(--transition);
+        }
+        .competitor-card:hover { box-shadow: var(--shadow-md); }
+        .competitor-card h4 { color: var(--nyit-navy); margin-bottom: 4px; }
+        .comp-type { font-size: 0.82rem; color: var(--nyit-blue); font-weight: 600; margin-bottom: 10px; }
+        .competitor-card p { font-size: 0.85rem; color: var(--text-secondary); }
+        .comp-price {
+            display: inline-block; margin-top: 8px; font-size: 0.82rem; font-weight: 700;
+            color: var(--text-muted); background: var(--bg-light); padding: 4px 12px;
+            border-radius: 50px;
+        }
+        .nyit-position {
+            background: linear-gradient(135deg, var(--nyit-navy), var(--nyit-navy-dark));
+            border-radius: var(--radius-md); padding: 32px; margin-top: 32px;
+        }
+        .nyit-position h3 { color: var(--nyit-gold); margin-bottom: 16px; }
+        .nyit-position p { color: rgba(255,255,255,0.8); }
+        .position-hooks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+        .hook-item {
+            background: rgba(255,255,255,0.06); border-left: 3px solid var(--nyit-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 12px 16px; font-size: 0.88rem; color: rgba(255,255,255,0.8);
+        }
+        .hook-label {
+            display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.1em; color: var(--nyit-gold); margin-bottom: 4px;
+        }
+        @media (max-width: 700px) { .position-hooks { grid-template-columns: 1fr; } }
+
+        /* ===== ROI CHART ===== */
+        .roi-chart { margin: 24px 0; }
+        .roi-bar-group { margin-bottom: 20px; }
+        .roi-bar-label { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); display: block; margin-bottom: 8px; }
+        .roi-bars { display: flex; flex-direction: column; gap: 4px; }
+        .roi-bar {
+            height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center;
+            padding: 0 12px; font-size: 0.78rem; font-weight: 600; width: 0; transition: width 1s ease;
+        }
+        .roi-bar.animated { width: var(--target-width); }
+        .roi-bar.current { background: #e2e8f0; color: var(--text-secondary); }
+        .roi-bar.ai-enabled { background: linear-gradient(90deg, var(--nyit-gold), var(--nyit-gold-light)); color: var(--nyit-navy); }
+
+        /* ===== PRICING ===== */
+        .pricing-section {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;
+        }
+        @media (max-width: 800px) { .pricing-section { grid-template-columns: 1fr; } }
+        .pricing-card {
+            background: linear-gradient(135deg, var(--nyit-navy), var(--nyit-navy-dark));
+            border-radius: var(--radius-lg); padding: 36px; text-align: center;
+        }
+        .pricing-card .price { font-size: 3.5rem; font-weight: 800; color: var(--nyit-gold); }
+        .pricing-card .price-unit { font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+        .pricing-card .price-rationale { font-size: 0.88rem; color: rgba(255,255,255,0.6); margin-bottom: 0; }
+        .bundle-card {
+            background: var(--bg-white); border: 2px solid var(--nyit-gold);
+            border-radius: var(--radius-lg); padding: 28px; text-align: center;
+        }
+        .bundle-card .bundle-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--nyit-gold); margin-bottom: 4px; }
+        .bundle-card .bundle-price { font-size: 2.2rem; font-weight: 800; color: var(--nyit-navy); }
+        .bundle-card .bundle-savings { font-size: 0.88rem; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+        .bundle-card .bundle-detail { font-size: 0.83rem; color: var(--text-secondary); margin-bottom: 0; }
+        .comp-price-row {
+            display: flex; justify-content: space-between; padding: 10px 0;
+            border-bottom: 1px solid var(--border-color); font-size: 0.88rem;
+        }
+        .comp-price-row:last-child { border-bottom: none; }
+        .comp-name { color: var(--text-secondary); }
+        .comp-cost { font-weight: 600; color: var(--text-primary); }
+        .comp-price-row.nyit-row { background: rgba(240,171,0,0.08); border-radius: var(--radius-sm); padding: 10px 12px; margin-top: 4px; }
+        .comp-price-row.nyit-row .comp-name { color: var(--nyit-navy); font-weight: 700; }
+        .comp-price-row.nyit-row .comp-cost { color: var(--nyit-gold); font-weight: 800; }
+
+        /* ===== STEPS ===== */
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 32px; }
+        .step-card {
+            background: var(--bg-white); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 24px; position: relative;
+            padding-top: 48px; transition: var(--transition);
+        }
+        .step-card:hover { box-shadow: var(--shadow-md); border-color: var(--nyit-gold); }
+        .step-number {
+            position: absolute; top: -1px; left: 24px;
+            background: var(--nyit-gold); color: var(--nyit-navy);
+            width: 36px; height: 36px; border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 1rem;
+        }
+        .step-card h4 { color: var(--nyit-navy); margin-bottom: 8px; }
+        .step-card p { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0; }
+
+        /* ===== CLOSING ===== */
+        .closing-cta {
+            background: linear-gradient(135deg, var(--nyit-navy), var(--nyit-navy-dark));
+            padding: 60px 0; text-align: center;
+        }
+        .closing-cta .cta-tagline {
+            color: var(--nyit-gold); font-size: 1.2rem; font-style: italic; margin-bottom: 16px;
+        }
+        .closing-cta h2 { color: #fff; margin-bottom: 16px; }
+        .closing-cta p { color: rgba(255,255,255,0.6); font-size: 0.95rem; max-width: 600px; margin: 0 auto; }
+
+        /* ===== FOOTER ===== */
+        .footer { background: #0a0a1a; padding: 24px 0; text-align: center; }
+        .footer p { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-bottom: 0; }
+        .footer a { color: rgba(255,255,255,0.5); }
+
+        /* ===== BAR CHART ===== */
+        .bar-chart { margin: 24px 0; }
+        .bar-chart-title { font-size: 1rem; color: var(--nyit-navy); margin-bottom: 16px; }
+        .bar-row { display: flex; align-items: center; margin-bottom: 10px; }
+        .bar-label { width: 200px; font-size: 0.82rem; font-weight: 600; color: var(--text-primary); flex-shrink: 0; }
+        .bar-track { flex: 1; background: #f1f5f9; border-radius: var(--radius-sm); height: 32px; overflow: hidden; }
+        .bar-fill {
+            height: 100%; border-radius: var(--radius-sm); display: flex; align-items: center;
+            padding: 0 12px; font-size: 0.78rem; font-weight: 600; color: #fff;
+            width: 0; transition: width 1s ease;
+        }
+        .bar-fill.animated { width: var(--target-width); }
+        .bar-fill.navy { background: var(--nyit-navy); }
+        .bar-fill.gold { background: var(--nyit-gold); color: var(--nyit-navy); }
+        .bar-fill.blue { background: var(--nyit-blue); }
+        @media (max-width: 600px) {
+            .bar-row { flex-direction: column; align-items: flex-start; }
+            .bar-label { width: 100%; margin-bottom: 4px; }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== MS PATHWAY TABLE ===== */
+        .pathway-table {
+            width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 16px;
+        }
+        .pathway-table th {
+            background: var(--nyit-navy); color: #fff; padding: 12px 16px;
+            text-align: left; font-size: 0.82rem; font-weight: 600;
+        }
+        .pathway-table td {
+            padding: 12px 16px; border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .pathway-table tr:hover td { background: var(--bg-light); }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAV ===== -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-icon">NYIT</span>
+                AI Marketing Certificates
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#opportunity">The Opportunity</a></li>
+                <li><a href="#gap">The Gap</a></li>
+                <li><a href="#certificates">3 Certificates</a></li>
+                <li><a href="#competitive">Why NYIT</a></li>
+                <li><a href="#ms-pathway">MS Pathway</a></li>
+                <li><a href="#roi">Investment</a></li>
+                <li><a href="#next-steps">Next Steps</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Strategic Blueprint 2025&ndash;2030</div>
+                <h1>
+                    <span class="gold">Learn AI. Build with AI. Lead with AI.</span><br>
+                    Three Marketing Certificates. One MS Pathway.
+                </h1>
+                <p class="hero-tagline">
+                    Three progressive certificates that take marketing professionals from AI
+                    literacy to hands-on operations to strategic leadership &mdash; each a stepping
+                    stone toward NYIT's MS in Marketing Technology, AI and Analytics.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="number">~170K</div>
+                        <div class="label">NYC Marketing Jobs</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">15&ndash;25%</div>
+                        <div class="label">AI Salary Premium</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">3</div>
+                        <div class="label">Certificates</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">$1,499</div>
+                        <div class="label">Per Certificate</div>
+                    </div>
+                </div>
+                <a href="#certificates" class="hero-cta">
+                    Explore the 3 Certificates <span>&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THESIS BANNER ===== -->
+    <div class="thesis-banner">
+        <div class="container">
+            <div class="thesis-content">
+                <p class="thesis-quote">
+                    &ldquo;Stop chatting with AI. Start orchestrating it.&rdquo;
+                </p>
+                <p class="thesis-sub">
+                    The market is shifting from simple AI chat to fully automated AI workflows.
+                    NYIT's polytechnic identity makes it uniquely positioned to teach professionals
+                    how to build and manage AI-powered marketing systems &mdash; not just use tools.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== THE LOGIC ===== -->
+    <section class="section" id="opportunity">
+        <div class="container">
+            <div class="fade-up">
+                <span class="section-label">Section 1 &mdash; The Opportunity</span>
+                <h2 class="section-title">The NYC Marketing Labor Market</h2>
+                <p class="section-subtitle">
+                    The New York metro area employs roughly 170,000 marketing professionals across
+                    four major job clusters. AI is transforming every one of them. Formal training
+                    has not kept pace.
+                </p>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Logic Flow Diagram -->
+            <div class="logic-flow fade-up">
+                <div class="logic-step">
+                    <div class="step-num">Step 1</div>
+                    <h4>~170,000 Jobs</h4>
+                    <p>Four marketing job clusters in NYC</p>
+                </div>
+                <span class="logic-arrow">&rarr;</span>
+                <div class="logic-step">
+                    <div class="step-num">Step 2</div>
+                    <h4>One Universal Gap</h4>
+                    <p>Every role needs AI skills &mdash; nobody is teaching them</p>
+                </div>
+                <span class="logic-arrow">&rarr;</span>
+                <div class="logic-step">
+                    <div class="step-num">Step 3</div>
+                    <h4>3 Certificates</h4>
+                    <p>Learn it. Build with it. Lead with it.</p>
+                </div>
+            </div>
+
+            <!-- Job Clusters -->
+            <h3 class="fade-up" style="margin-top: 40px; color: var(--nyit-navy);">The Four Job Clusters</h3>
+            <p class="fade-up" style="color: var(--text-secondary); margin-bottom: 20px;">
+                These are the BLS-defined occupational categories that constitute the NYC marketing workforce.
+                All four face the same fundamental AI disruption.
+            </p>
+
+            <div class="grid-2 fade-up">
+                <div class="cluster-card">
+                    <h4>Market Research Analysts &amp; Specialists</h4>
+                    <p class="cluster-subtitle">The largest marketing cluster in NYC</p>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">NYC Employment</span>
+                        <span class="stat-value">~80,000</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">Median Salary</span>
+                        <span class="stat-value">$99,600</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">AI Impact</span>
+                        <span class="stat-value">High &mdash; data tasks automating fast</span>
+                    </div>
+                </div>
+
+                <div class="cluster-card">
+                    <h4>Marketing Managers</h4>
+                    <p class="cluster-subtitle">The strategic core</p>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">NYC Employment</span>
+                        <span class="stat-value">~46,600</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">Median Salary</span>
+                        <span class="stat-value">$190,000</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">AI Impact</span>
+                        <span class="stat-value">Moderate &mdash; managing AI output</span>
+                    </div>
+                </div>
+
+                <div class="cluster-card">
+                    <h4>PR &amp; Communications Specialists</h4>
+                    <p class="cluster-subtitle">The brand voice</p>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">NYC Employment</span>
+                        <span class="stat-value">~27,000</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">Mean Wages</span>
+                        <span class="stat-value">$82,000&ndash;$90,000</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">AI Impact</span>
+                        <span class="stat-value">High &mdash; content generation wave</span>
+                    </div>
+                </div>
+
+                <div class="cluster-card">
+                    <h4>Sales Enablement &amp; Revenue Ops</h4>
+                    <p class="cluster-subtitle">The growth frontier</p>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">NYC Employment</span>
+                        <span class="stat-value">~15,000+</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">Salary Range</span>
+                        <span class="stat-value">$100,000&ndash;$160,000</span>
+                    </div>
+                    <div class="cluster-stat-row">
+                        <span class="stat-label">AI Impact</span>
+                        <span class="stat-value">High &mdash; CRM/pipeline automation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bar Chart -->
+            <div class="bar-chart fade-up" style="margin-top: 40px;">
+                <h3 class="bar-chart-title">NYC Marketing Employment by Cluster (~170,000 total)</h3>
+                <div class="bar-row">
+                    <span class="bar-label">Market Research</span>
+                    <div class="bar-track">
+                        <div class="bar-fill navy" style="--target-width: 95%;">~80,000</div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Marketing Managers</span>
+                    <div class="bar-track">
+                        <div class="bar-fill gold" style="--target-width: 55%;">~46,600</div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">PR &amp; Communications</span>
+                    <div class="bar-track">
+                        <div class="bar-fill blue" style="--target-width: 32%;">~27,000</div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Sales &amp; RevOps</span>
+                    <div class="bar-track">
+                        <div class="bar-fill navy" style="--target-width: 18%;">~15,000+</div>
+                    </div>
+                </div>
+            </div>
+            <p class="fade-up" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">
+                Sources: Bureau of Labor Statistics (OEWS), Indeed, Built In NYC, ZipRecruiter. NYC&ndash;Newark&ndash;Jersey City MSA, 2024&ndash;2025.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== THE GAP ===== -->
+    <section class="section section-alt" id="gap">
+        <div class="container">
+            <div class="fade-up">
+                <span class="section-label">Section 2 &mdash; The Gap</span>
+                <h2 class="section-title">AI Is Changing Every Marketing Role</h2>
+                <p class="section-subtitle">
+                    The marketing profession is moving from the &ldquo;Novelty Phase&rdquo;
+                    (2023&ndash;2024) to the &ldquo;Integration Phase&rdquo; (2025&ndash;2030).
+                    Mid-career professionals are being squeezed from both sides.
+                </p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="gap-levels fade-up">
+                <div class="level-card entry">
+                    <h4>Entry-Level (0&ndash;3 years)</h4>
+                    <p>Tasks like copywriting, social scheduling, and basic data entry are being automated.
+                        Employers hire fewer juniors, expecting AI to handle execution work.</p>
+                </div>
+                <div class="level-card mid">
+                    <h4>Mid-Level (4&ndash;10 years) &mdash; Primary Target</h4>
+                    <p>Squeezed from both sides. Expected to produce the output of a team
+                        using AI &mdash; but lack formal training to manage this transition.</p>
+                </div>
+                <div class="level-card senior">
+                    <h4>Senior-Level (10+ years)</h4>
+                    <p>Demand remains strong for strategic judgment, but leaders fly blind on
+                        governance and ethics. Responsible for AI output but lack frameworks.</p>
+                </div>
+            </div>
+
+            <!-- The Universal Insight -->
+            <div class="gap-universal fade-up">
+                <h3>The Insight: One Gap, Not Four</h3>
+                <p>
+                    A Market Research Analyst and a Brand Manager face <span class="highlight">the same AI skill gap</span>.
+                    They both need to understand how AI works, both need to build automations, and both need to
+                    think about governance. The <span class="highlight">domain knowledge they already have</span> &mdash; research
+                    methods, brand strategy, sales operations &mdash; is their career. What they're missing is the AI layer.
+                </p>
+                <p style="margin-top: 16px; margin-bottom: 0;">
+                    This is why the certificates are organized by <span class="highlight">AI skill progression</span>,
+                    not by marketing role. You already know marketing. We teach you the AI.
+                </p>
+            </div>
+
+            <!-- Agentic Shift -->
+            <div class="agentic-box fade-up">
+                <h3>The Shift to Agentic Workflows</h3>
+                <p style="color: var(--text-secondary);">
+                    The most critical trend for 2025&ndash;2030 is the rise of <strong>Agentic AI</strong>.
+                    Unlike ChatGPT (which waits for a prompt), agents can <em>act</em> &mdash; they monitor,
+                    adjust, generate, test, and report autonomously.
+                </p>
+                <div class="state-compare">
+                    <div class="state-card current">
+                        <div class="state-label">Current State (2024)</div>
+                        A marketer asks an LLM to &ldquo;write an email&rdquo;
+                    </div>
+                    <div class="state-card future">
+                        <div class="state-label">Future State (2026+)</div>
+                        A marketer deploys a &ldquo;Campaign Agent&rdquo; that autonomously monitors,
+                        adjusts, generates, tests, and reports
+                    </div>
+                </div>
+                <p style="margin-top: 16px; font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+                    <strong style="color: var(--nyit-gold);">Curriculum Implication:</strong>
+                    NYIT teaches <strong>Agent Orchestration</strong> &mdash; the skill of defining goals,
+                    constraints, and permissions for AI agents. This is a higher-order skill than prompt engineering.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THE 3 CERTIFICATES ===== -->
+    <section class="section" id="certificates">
+        <div class="container">
+            <div class="fade-up text-center">
+                <span class="section-label">Section 3 &mdash; The Solution</span>
+                <h2 class="section-title">Three Progressive Certificates</h2>
+                <p class="section-subtitle mx-auto">
+                    Organized by AI skill progression, not by marketing role. Every marketer &mdash; analyst,
+                    brand manager, sales lead, or CMO &mdash; follows the same path: understand AI,
+                    build with AI, then lead with AI.
+                </p>
+                <div class="divider center"></div>
+                <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 8px; margin-bottom: 40px; font-size: 0.85rem; color: var(--text-muted);">
+                    <span>&#127891; NYIT Agentic Marketing Series</span>
+                    <span>&#128187; Online, Hybrid Support</span>
+                    <span>&#128736; Project-Based</span>
+                    <span>&#128176; $1,499 per certificate</span>
+                </div>
+            </div>
+
+            <!-- ── Certificate 1 ── -->
+            <div class="cert-card cert-1 fade-up" style="margin-bottom: 28px;">
+                <div class="cert-header">
+                    <div class="cert-number">1</div>
+                    <h3>AI Foundations for Marketing</h3>
+                    <p class="cert-subtitle">Understand the technology, the ethics, and the opportunity.</p>
+                    <div class="cert-meta">
+                        <span>&#128197; 5 Weeks</span>
+                        <span>&#127919; All marketing roles</span>
+                        <span>&#128218; No prerequisites</span>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <div class="cert-who">
+                        <strong>Who is this for?</strong> Any marketing professional who wants a solid,
+                        practical understanding of AI before applying it to their work. No technical
+                        background required.
+                    </div>
+
+                    <button class="cert-module-toggle" onclick="toggleModules(this)">
+                        View Weekly Curriculum
+                        <span class="toggle-arrow">&#9660;</span>
+                    </button>
+                    <div class="cert-module-list">
+                        <div class="module-item">
+                            <h5>Week 1: How AI Actually Works</h5>
+                            <p>A practical overview of the technology behind ChatGPT, Claude, and similar tools &mdash; without the jargon.</p>
+                            <ul class="module-objectives">
+                                <li>Explain how large language models generate text (tokens, context, probability)</li>
+                                <li>Identify when AI is likely to hallucinate and why</li>
+                                <li>Distinguish between AI hype and practical capability</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 2: Ethics, Privacy &amp; Responsible AI</h5>
+                            <p>Bias detection, data privacy (GDPR/CCPA), and NYIT's &ldquo;Human-First&rdquo; AI philosophy.</p>
+                            <ul class="module-objectives">
+                                <li>Identify common sources of bias in AI marketing outputs</li>
+                                <li>Apply GDPR/CCPA requirements to AI-driven marketing workflows</li>
+                                <li>Evaluate ethical trade-offs in AI content generation</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">Case Studies</span>
+                                <span class="tool-tag">NIST AI RMF</span>
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 3: Prompt Engineering Mastery</h5>
+                            <p>Move beyond basic prompting to structured, repeatable techniques that produce consistent results.</p>
+                            <ul class="module-objectives">
+                                <li>Write chain-of-thought prompts for complex marketing analysis</li>
+                                <li>Build reusable prompt templates for recurring tasks</li>
+                                <li>Extract structured data (tables, JSON) from unstructured marketing content</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                                <span class="tool-tag">Custom GPTs</span>
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 4: Agent Architecture &mdash; When AI Acts</h5>
+                            <p>Introduction to AI agents: tools that don't just respond, but take action. Copilots vs. agents.</p>
+                            <ul class="module-objectives">
+                                <li>Distinguish between copilot-style AI and autonomous AI agents</li>
+                                <li>Map marketing tasks along the automation spectrum</li>
+                                <li>Design simple agent workflows using no-code platforms</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">Zapier (intro)</span>
+                                <span class="tool-tag">Make (intro)</span>
+                                <span class="tool-tag">Claude</span>
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 5: Your AI Marketing Toolkit &amp; Capstone</h5>
+                            <p>Hands-on setup of a personal AI toolkit. Apply everything learned to a real marketing scenario.</p>
+                            <ul class="module-objectives">
+                                <li>Configure and customize AI tools for your specific marketing role</li>
+                                <li>Audit a real organization's marketing operations for AI opportunities</li>
+                                <li>Deliver a prioritized AI readiness recommendation report</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                                <span class="tool-tag">Midjourney</span>
+                                <span class="tool-tag">Zapier</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-capstone">
+                        <div class="capstone-label">Capstone Project</div>
+                        <h5>&ldquo;The AI Readiness Audit&rdquo;</h5>
+                        <p>Assess a real organization's marketing operations for AI opportunities.
+                            Deliver a prioritized recommendation report identifying quick wins,
+                            high-impact automations, and governance gaps.</p>
+                    </div>
+
+                    <div class="cert-ms">
+                        <div class="ms-label">MS Pathway Connection</div>
+                        <div>
+                            <span class="ms-course-tag">BUSA 660: AI &amp; Machine Learning</span>
+                            <span class="ms-course-tag">BUSA 601: Data Storytelling</span>
+                        </div>
+                        <p><strong>Certificate:</strong> Understand how AI works and identify opportunities.
+                            <strong>MS:</strong> Learn the quantitative foundations and build production systems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── Certificate 2 ── -->
+            <div class="cert-card cert-2 fade-up" style="margin-bottom: 28px;">
+                <div class="cert-header">
+                    <div class="cert-number">2</div>
+                    <h3>AI Marketing Operations</h3>
+                    <p class="cert-subtitle">Build real AI-powered systems. Leave with a working portfolio.</p>
+                    <div class="cert-meta">
+                        <span>&#128197; 8 Weeks</span>
+                        <span>&#127919; All marketing roles</span>
+                        <span>&#128218; Certificate 1 or equivalent AI literacy</span>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <div class="cert-who">
+                        <strong>Who is this for?</strong> Marketing professionals ready to build. You'll
+                        create automations, dashboards, content systems, and AI-powered workflows &mdash;
+                        choosing capstone projects in your own professional domain.
+                    </div>
+
+                    <button class="cert-module-toggle" onclick="toggleModules(this)">
+                        View Weekly Curriculum
+                        <span class="toggle-arrow">&#9660;</span>
+                    </button>
+                    <div class="cert-module-list">
+                        <div class="module-item">
+                            <h5>Week 1: AI-Powered Data Analysis</h5>
+                            <p>Query marketing datasets using natural-language AI interfaces. Validate AI findings against raw data.</p>
+                            <ul class="module-objectives">
+                                <li>Query structured datasets using natural-language AI interfaces</li>
+                                <li>Cross-validate AI-generated insights against source data</li>
+                                <li>Create automated data summaries for stakeholder presentations</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">ChatGPT Code Interpreter</span>
+                                <span class="tool-tag">Google Sheets + AI</span>
+                                <span class="tool-tag">Tableau</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> Natural-language data analysis report on a real marketing dataset
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 2: AI Content Creation &amp; Brand Voice</h5>
+                            <p>Configure AI assistants for brand-consistent content. Generate text, images, and video.</p>
+                            <ul class="module-objectives">
+                                <li>Build a brand voice profile and configure a custom AI assistant</li>
+                                <li>Create visual assets using AI image and video generators</li>
+                                <li>Design fact-checking workflows for AI-generated content</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">Custom GPTs</span>
+                                <span class="tool-tag">Claude Projects</span>
+                                <span class="tool-tag">Midjourney</span>
+                                <span class="tool-tag">DALL-E</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> Custom AI brand assistant with multi-format content samples
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 3: Marketing Workflow Automation</h5>
+                            <p>Build &ldquo;If This, Then That&rdquo; automations using Zapier, Make, or Power Automate.</p>
+                            <ul class="module-objectives">
+                                <li>Build multi-step automated workflows with conditional logic</li>
+                                <li>Connect marketing platforms through API-based integrations</li>
+                                <li>Design error-handling and fallback protocols</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">Zapier</span>
+                                <span class="tool-tag">Make</span>
+                                <span class="tool-tag">Power Automate</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> Working automated lead-processing pipeline with documentation
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 4: CRM &amp; Sales Intelligence</h5>
+                            <p>AI-powered lead scoring, call analysis coaching, and real-time sales knowledge bases.</p>
+                            <ul class="module-objectives">
+                                <li>Configure AI-powered lead scoring within a CRM platform</li>
+                                <li>Build an interactive AI knowledge base for sales teams</li>
+                                <li>Validate scoring models against historical conversion data</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">HubSpot AI</span>
+                                <span class="tool-tag">Salesforce Einstein</span>
+                                <span class="tool-tag">Gong</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> Lead scoring model or sales knowledge base with validation report
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 5: Market Research &amp; Consumer Insights with AI</h5>
+                            <p>AI-simulated focus groups, sentiment analysis, and trend prediction dashboards.</p>
+                            <ul class="module-objectives">
+                                <li>Design AI-powered synthetic focus groups using persona prompts</li>
+                                <li>Configure no-code social listening and sentiment pipelines</li>
+                                <li>Build a trend-monitoring dashboard with automated alerts</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                                <span class="tool-tag">Brandwatch</span>
+                                <span class="tool-tag">Google Trends</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> Synthetic focus group report or live sentiment dashboard
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 6: Campaign Planning &amp; Personalization</h5>
+                            <p>AI-powered competitive analysis, lifecycle emails, and product launch simulation.</p>
+                            <ul class="module-objectives">
+                                <li>Build automated competitor monitoring dashboards</li>
+                                <li>Design behavior-triggered email sequences with AI-generated content</li>
+                                <li>Simulate product launch scenarios using AI role-playing</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">HubSpot</span>
+                                <span class="tool-tag">Customer.io</span>
+                                <span class="tool-tag">Crayon</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> Personalized campaign with competitive intelligence report
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 7: Data Hygiene &amp; Quality Governance</h5>
+                            <p>Automated data cleaning, validation, and governance protocols.</p>
+                            <ul class="module-objectives">
+                                <li>Design automated data validation and deduplication workflows</li>
+                                <li>Implement data quality scoring for marketing databases</li>
+                                <li>Create governance protocols for maintaining data integrity</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">OpenRefine</span>
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">dbt (intro)</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> Data cleaning workflow with before/after quality audit
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 8: Capstone Sprint</h5>
+                            <p>Build and present your domain-specific capstone project to a panel of instructors and peers.</p>
+                            <ul class="module-objectives">
+                                <li>Select and scope a capstone project aligned with your career focus</li>
+                                <li>Build a working AI-powered system or workflow</li>
+                                <li>Present findings and demo to a peer panel</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cert-capstone">
+                        <div class="capstone-label">Capstone &mdash; Choose Your Domain</div>
+                        <h5>Students choose a project that matches their career focus:</h5>
+                        <div class="project-options">
+                            <div class="project-option">
+                                <strong>Research Focus</strong>
+                                &ldquo;The Living Audit&rdquo; &mdash; Real-time brand health dashboard with AI sentiment analysis
+                            </div>
+                            <div class="project-option">
+                                <strong>Operations Focus</strong>
+                                &ldquo;The Autopilot Campaign&rdquo; &mdash; Fully automated lead-nurturing workflow
+                            </div>
+                            <div class="project-option">
+                                <strong>Content Focus</strong>
+                                &ldquo;The Brand Bible 2.0&rdquo; &mdash; Custom AI brand content assistant with governance handbook
+                            </div>
+                            <div class="project-option">
+                                <strong>Sales Focus</strong>
+                                &ldquo;The Smart Sales Assistant&rdquo; &mdash; AI-powered 24/7 sales support tool
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-ms">
+                        <div class="ms-label">MS Pathway Connection</div>
+                        <div>
+                            <span class="ms-course-tag">Social-Media &amp; Digital Marketing Analytics</span>
+                            <span class="ms-course-tag">First-Party Customer Data, AI &amp; Privacy</span>
+                            <span class="ms-course-tag">AI for Content Creation &amp; Personalization</span>
+                        </div>
+                        <p><strong>Certificate:</strong> Build AI-powered marketing systems.
+                            <strong>MS:</strong> Master the statistics, data architecture, and experimental design behind them.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── Certificate 3 ── -->
+            <div class="cert-card cert-3 fade-up" style="margin-bottom: 28px;">
+                <div class="cert-header">
+                    <div class="cert-number">3</div>
+                    <h3>AI Marketing Strategy &amp; Leadership</h3>
+                    <p class="cert-subtitle">Govern AI systems. Build business cases. Lead the transformation.</p>
+                    <div class="cert-meta">
+                        <span>&#128197; 6 Weeks</span>
+                        <span>&#127919; Managers, Directors, VPs</span>
+                        <span>&#128218; Certificate 1 or equivalent + 3 years marketing experience</span>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <div class="cert-who">
+                        <strong>Who is this for?</strong> Marketing managers and leaders responsible for
+                        AI adoption, governance, and team transformation. Ideal after Certificate 2,
+                        but also works as a standalone for senior professionals.
+                    </div>
+
+                    <button class="cert-module-toggle" onclick="toggleModules(this)">
+                        View Weekly Curriculum
+                        <span class="toggle-arrow">&#9660;</span>
+                    </button>
+                    <div class="cert-module-list">
+                        <div class="module-item">
+                            <h5>Week 1: AI ROI &amp; Business Cases</h5>
+                            <p>Build financial justifications for AI adoption. Calculate &ldquo;Time Saved&rdquo; vs. &ldquo;Value Added.&rdquo;</p>
+                            <ul class="module-objectives">
+                                <li>Build a financial business case for AI adoption in marketing</li>
+                                <li>Calculate ROI using time-saved and value-added frameworks</li>
+                                <li>Evaluate build vs. buy decisions for AI marketing tools</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">Excel / Sheets</span>
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Gartner Frameworks</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> AI investment business case with ROI projections and vendor evaluation
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 2: AI Governance &amp; Brand Safety</h5>
+                            <p>Build your organization's AI marketing guidelines: what to automate, what needs human oversight, how to handle failures.</p>
+                            <ul class="module-objectives">
+                                <li>Design an organizational AI governance framework for marketing</li>
+                                <li>Create AI usage policies with escalation and override protocols</li>
+                                <li>Develop crisis response procedures for AI-related brand incidents</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">Policy Templates</span>
+                                <span class="tool-tag">NIST AI RMF</span>
+                                <span class="tool-tag">Claude</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> AI governance playbook with policies, escalation matrix, and crisis protocols
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 3: Change Management &amp; AI Team Building</h5>
+                            <p>Lead the cultural shift from &ldquo;AI as a threat&rdquo; to &ldquo;AI as a co-worker.&rdquo;</p>
+                            <ul class="module-objectives">
+                                <li>Design an AI adoption change management plan</li>
+                                <li>Define new AI-enhanced roles and job descriptions</li>
+                                <li>Build team skills assessment and training roadmaps</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">Miro</span>
+                                <span class="tool-tag">Survey Tools</span>
+                                <span class="tool-tag">HR Frameworks</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> Change management plan with new role definitions and training roadmap
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 4: Ethics, Copyright &amp; Legal Risk</h5>
+                            <p>AI copyright law (USCO rulings), deepfake liability, bias in marketing AI, and regulatory horizon.</p>
+                            <ul class="module-objectives">
+                                <li>Interpret current AI copyright law and liability frameworks</li>
+                                <li>Identify bias and deepfake risks in marketing AI applications</li>
+                                <li>Draft an organizational AI Acceptable Use Policy</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">Legal Databases</span>
+                                <span class="tool-tag">Policy Templates</span>
+                                <span class="tool-tag">Risk Matrices</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> AI Acceptable Use Policy with risk assessment
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 5: Competitive Strategy &amp; Market Positioning</h5>
+                            <p>Use AI to analyze competitive landscapes and simulate market scenarios.</p>
+                            <ul class="module-objectives">
+                                <li>Build AI-powered competitive intelligence systems</li>
+                                <li>Simulate market reaction scenarios for strategic planning</li>
+                                <li>Design AI-enhanced strategic planning processes</li>
+                            </ul>
+                            <div style="margin-top: 8px;">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                                <span class="tool-tag">Crayon</span>
+                            </div>
+                            <div class="module-deliverable">
+                                <strong>Deliverable:</strong> Competitive intelligence report with AI-powered market simulation
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <h5>Week 6: Capstone Sprint</h5>
+                            <p>Build and present a board-ready AI transformation strategy for your current organization.</p>
+                            <ul class="module-objectives">
+                                <li>Synthesize all strategic frameworks into a cohesive roadmap</li>
+                                <li>Present to a simulated board with Q&amp;A defense</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cert-capstone">
+                        <div class="capstone-label">Capstone Project</div>
+                        <h5>&ldquo;The 2030 Roadmap&rdquo;</h5>
+                        <p>A board-ready AI transformation strategy: 3-year roadmap, governance framework,
+                            team restructuring plan, budget model, and tech stack evolution &mdash; presented
+                            to a simulated board for Q&amp;A defense.</p>
+                    </div>
+
+                    <div class="cert-ms">
+                        <div class="ms-label">MS Pathway Connection</div>
+                        <div>
+                            <span class="ms-course-tag">MRKT 620: Strategic Marketing &amp; Branding</span>
+                            <span class="ms-course-tag">Marketing Experimentation &amp; Measurement</span>
+                            <span class="ms-course-tag">Capstone: Martech Architecture</span>
+                        </div>
+                        <p><strong>Certificate:</strong> Build AI governance and strategy at the executive level.
+                            <strong>MS:</strong> Master analytical depth, experimental design, and architectural thinking.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== WHY NYIT ===== -->
+    <section class="section section-alt" id="competitive">
+        <div class="container">
+            <div class="fade-up">
+                <span class="section-label">Section 4</span>
+                <h2 class="section-title">Why NYIT?</h2>
+                <p class="section-subtitle">
+                    No dominant NYC player offers an affordable, academically-backed, deeply
+                    hands-on AI marketing certificate. NYIT fills that gap.
+                </p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="competitor-grid fade-up">
+                <div class="competitor-card">
+                    <h4>Columbia &amp; NYU</h4>
+                    <div class="comp-type">Theory &amp; Executive Strategy</div>
+                    <p>Broad executive education. Teaches <em>why</em> AI matters, not <em>how</em>
+                        to build with it. Passive coursework, high price.</p>
+                    <div class="comp-price">$2,500&ndash;$4,000 per cert</div>
+                </div>
+                <div class="competitor-card">
+                    <h4>Cornell (eCornell)</h4>
+                    <div class="comp-type">Traditional + AI Module</div>
+                    <p>Strong reputation, but AI is an add-on module &mdash; not the core system.
+                        Higher price creates a barrier for self-funded learners.</p>
+                    <div class="comp-price">~$3,600 per cert</div>
+                </div>
+                <div class="competitor-card">
+                    <h4>General Assembly</h4>
+                    <div class="comp-type">Entry-Level Bootcamp</div>
+                    <p>Good for career switchers. Lacks academic rigor and university signaling.
+                        Surface-level tools, not deep architectural understanding.</p>
+                    <div class="comp-price">$3,000&ndash;$4,000</div>
+                </div>
+            </div>
+
+            <div class="nyit-position fade-up">
+                <h3>The NYIT Advantage: The &ldquo;Builder&rdquo; Credential</h3>
+                <p>
+                    As an institute of technology, NYIT offers the rare combination of <strong>academic
+                    credibility</strong> and <strong>hands-on building</strong>. Students don't just study AI &mdash;
+                    they ship working systems.
+                </p>
+                <div class="position-hooks">
+                    <div class="hook-item">
+                        <span class="hook-label">Marketing Hook</span>
+                        &ldquo;Stop chatting with AI. Start orchestrating it.&rdquo;
+                    </div>
+                    <div class="hook-item">
+                        <span class="hook-label">Brand Value</span>
+                        Polytechnic heritage = engineering-adjacent credibility
+                    </div>
+                    <div class="hook-item">
+                        <span class="hook-label">Gap to Fill</span>
+                        No dominant &ldquo;AI Marketing Technologist&rdquo; certificate in NYC
+                    </div>
+                    <div class="hook-item">
+                        <span class="hook-label">Price Advantage</span>
+                        3 certs/year within IRS Section 127 ($5,250 tax-free cap)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MS PATHWAY ===== -->
+    <section class="section" id="ms-pathway">
+        <div class="container">
+            <div class="fade-up text-center">
+                <span class="section-label">Section 5 &mdash; Pathway to Graduate Study</span>
+                <h2 class="section-title">Your Path to an MS in Marketing Technology, AI and Analytics</h2>
+                <p class="section-subtitle mx-auto">
+                    Certificates deliver immediate professional value on their own.
+                    For those who choose to continue, each certificate earns a scholarship
+                    toward NYIT's MS (30 credits, launching Fall 2026).
+                </p>
+                <div class="divider center"></div>
+            </div>
+
+            <div class="fade-up" style="background: linear-gradient(135deg, var(--nyit-navy), var(--nyit-navy-dark)); border-radius: var(--radius-md); padding: 28px 32px; text-align: center;">
+                <p style="color: #fff; font-size: 1.15rem; font-weight: 700; margin-bottom: 6px;">
+                    Certificates are valuable on their own. The MS is optional.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 0;">
+                    Enroll in the MS at any time &mdash; no rigid timeline or required sequence.
+                </p>
+            </div>
+
+            <!-- Two Layers -->
+            <div class="grid-2 fade-up" style="margin-top: 28px;">
+                <div class="card" style="border-left: 4px solid var(--nyit-gold);">
+                    <h4 style="color: var(--nyit-gold); margin-bottom: 8px;">Certificates: Applied Practitioner</h4>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0;">
+                        Use AI tools to execute real marketing tasks. Build automations, generate content,
+                        analyze data, and manage campaigns. Leave with a working project portfolio.
+                    </p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--nyit-navy);">
+                    <h4 style="color: var(--nyit-navy); margin-bottom: 8px;">MS Degree: Analytical &amp; Architectural</h4>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0;">
+                        Understand the statistics, experimental design, data architecture, and
+                        strategic frameworks behind the tools. Design and govern systems, not just use them.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mapping Table -->
+            <div class="fade-up" style="margin-top: 32px;">
+                <h3 style="color: var(--nyit-navy); margin-bottom: 16px;">How Each Certificate Feeds the MS</h3>
+                <table class="pathway-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 28%;">Certificate</th>
+                            <th style="width: 32%;">MS Courses It Prepares You For</th>
+                            <th style="width: 40%;">How They Complement Each Other</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cert 1:</strong> AI Foundations</td>
+                            <td>BUSA 660: AI &amp; ML; BUSA 601: Data Storytelling</td>
+                            <td>Certificate: Understand AI. MS: Build with the quantitative foundations.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cert 2:</strong> AI Operations</td>
+                            <td>Social-Media Analytics; First-Party Data; AI for Content</td>
+                            <td>Certificate: Build AI systems. MS: Master the statistics and data architecture behind them.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cert 3:</strong> Strategy &amp; Leadership</td>
+                            <td>MRKT 620: Strategic Marketing; Experimentation; Capstone</td>
+                            <td>Certificate: Lead AI adoption. MS: Analytical depth for architectural decisions.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Scholarship -->
+            <div class="fade-up" style="margin-top: 32px;">
+                <h3 style="color: var(--nyit-navy); margin-bottom: 16px;">Scholarship Model</h3>
+                <div class="card" style="border: 2px solid var(--nyit-gold); text-align: center; padding: 28px;">
+                    <p style="font-size: 1.1rem; color: var(--nyit-navy); margin-bottom: 8px;">
+                        <strong>Each certificate = $500 tuition scholarship</strong> toward the MS
+                    </p>
+                    <p style="font-size: 1.3rem; font-weight: 800; color: var(--nyit-gold); margin-bottom: 8px;">
+                        Complete all 3 = $1,500 scholarship toward MS tuition
+                    </p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">
+                        All 3 certificates ($4,497) completable in one year within the IRS Section 127 tax-free cap ($5,250).
+                    </p>
+                </div>
+            </div>
+
+            <!-- MS Curriculum -->
+            <div class="fade-up" style="margin-top: 32px;">
+                <h3 style="color: var(--nyit-navy); margin-bottom: 16px;">MS Program Curriculum (30 Credits)</h3>
+                <div class="grid-2">
+                    <div class="card" style="border-top: 4px solid var(--nyit-navy);">
+                        <h4 style="color: var(--nyit-navy); margin-bottom: 12px;">Core Courses (15 credits)</h4>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                            <p style="margin-bottom: 6px;"><strong>BUSA 660:</strong> Foundations of AI &amp; Machine Learning</p>
+                            <p style="margin-bottom: 6px;"><strong>BUSA 602:</strong> Programming for Data Analysis</p>
+                            <p style="margin-bottom: 6px;"><strong>QANT 605:</strong> Statistical Thinking &amp; Problem Solving</p>
+                            <p style="margin-bottom: 6px;"><strong>BUSA 601:</strong> Data Storytelling &amp; Communication</p>
+                            <p style="margin-bottom: 0;"><strong>MRKT 620:</strong> Strategic Marketing &amp; Branding</p>
+                        </div>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--nyit-gold);">
+                        <h4 style="color: var(--nyit-navy); margin-bottom: 12px;">Specialized Courses (15 credits)</h4>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                            <p style="margin-bottom: 6px;">First-Party Customer Data, AI &amp; Privacy</p>
+                            <p style="margin-bottom: 6px;">AI for Content Creation &amp; Personalized Experiences</p>
+                            <p style="margin-bottom: 6px;">Social-Media &amp; Digital Marketing Analytics</p>
+                            <p style="margin-bottom: 6px;">Marketing Experimentation &amp; Performance Measurement</p>
+                            <p style="margin-bottom: 0;"><strong>Capstone:</strong> Marketing AI, Analytics &amp; Martech Architecture</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ROI & PRICING ===== -->
+    <section class="section section-alt" id="roi">
+        <div class="container">
+            <div class="fade-up">
+                <span class="section-label">Section 6</span>
+                <h2 class="section-title">ROI &amp; Investment Strategy</h2>
+                <p class="section-subtitle">
+                    AI-fluent marketing roles command a 15&ndash;25% wage premium over generalist listings.
+                    All three certificates fit within one year of IRS Section 127 employer reimbursement.
+                </p>
+                <div class="divider"></div>
+            </div>
+
+            <h3 class="fade-up" style="color: var(--nyit-navy); margin-bottom: 24px;">
+                Projected AI Salary Premium in NYC (2026)
+            </h3>
+
+            <div class="roi-chart fade-up">
+                <div class="roi-bar-group">
+                    <span class="roi-bar-label">Marketing Manager</span>
+                    <div class="roi-bars">
+                        <div class="roi-bar current" style="--target-width: 76%;">$190,000</div>
+                        <div class="roi-bar ai-enabled" style="--target-width: 85%;">$211,500 (+$21.5K)</div>
+                    </div>
+                </div>
+                <div class="roi-bar-group">
+                    <span class="roi-bar-label">Market Research Analyst</span>
+                    <div class="roi-bars">
+                        <div class="roi-bar current" style="--target-width: 40%;">$99,600</div>
+                        <div class="roi-bar ai-enabled" style="--target-width: 49%;">$122,000 (+$22.4K)</div>
+                    </div>
+                </div>
+                <div class="roi-bar-group">
+                    <span class="roi-bar-label">General Marketer</span>
+                    <div class="roi-bars">
+                        <div class="roi-bar current" style="--target-width: 51%;">$128,000</div>
+                        <div class="roi-bar ai-enabled" style="--target-width: 61%;">$153,500 (+$25.5K)</div>
+                    </div>
+                </div>
+                <div class="roi-bar-group">
+                    <span class="roi-bar-label">Senior Marketing Lead</span>
+                    <div class="roi-bars">
+                        <div class="roi-bar current" style="--target-width: 56%;">$140,000</div>
+                        <div class="roi-bar ai-enabled" style="--target-width: 70%;">$175,000 (+$35K)</div>
+                    </div>
+                </div>
+            </div>
+            <p class="fade-up" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">
+                Projections based on 2024&ndash;2025 AI wage premium trends (15&ndash;25%). Sources: Indeed, BLS, PwC AI Jobs Barometer.
+            </p>
+
+            <div class="pricing-section fade-up" style="margin-top: 48px;">
+                <div>
+                    <h3 style="color: var(--nyit-navy); margin-bottom: 16px;">Pricing Strategy</h3>
+                    <p style="color: var(--text-secondary);">
+                        All three certificates completable in one year: 3 &times; $1,499 = <strong>$4,497</strong>,
+                        fully covered under <strong>IRS Section 127</strong> ($5,250/year cap).
+                        Employees pay zero income tax; employers deduct as a business expense.
+                    </p>
+
+                    <div style="margin-top: 24px;">
+                        <h4 style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">
+                            Competitor Benchmark
+                        </h4>
+                        <div class="comp-price-row">
+                            <span class="comp-name">NYU / Columbia</span>
+                            <span class="comp-cost">$2,500&ndash;$4,000</span>
+                        </div>
+                        <div class="comp-price-row">
+                            <span class="comp-name">Cornell (eCornell)</span>
+                            <span class="comp-cost">~$3,600</span>
+                        </div>
+                        <div class="comp-price-row">
+                            <span class="comp-name">General Assembly</span>
+                            <span class="comp-cost">$3,000&ndash;$4,000</span>
+                        </div>
+                        <div class="comp-price-row nyit-row">
+                            <span class="comp-name">NYIT (Recommended)</span>
+                            <span class="comp-cost">$1,499</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="pricing-card">
+                        <div class="price">$1,499</div>
+                        <div class="price-unit">per certificate</div>
+                        <p class="price-rationale">
+                            3 certificates &times; $1,499 = $4,497 &mdash; fits within the
+                            IRS Section 127 annual $5,250 tax-free education benefit.
+                            Complete the full series in one year.
+                        </p>
+                    </div>
+                    <div class="bundle-card">
+                        <div class="bundle-label">Complete Series Bundle</div>
+                        <div class="bundle-price">$3,999</div>
+                        <div class="bundle-savings">All 3 certificates &mdash; ~11% savings</div>
+                        <p class="bundle-detail">
+                            Still within the IRS Section 127 annual cap.
+                            Includes $1,500 MS scholarship ($500 &times; 3).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEXT STEPS ===== -->
+    <section class="section" id="next-steps">
+        <div class="container">
+            <div class="fade-up text-center">
+                <span class="section-label">Section 7</span>
+                <h2 class="section-title">Immediate Next Steps</h2>
+                <p class="section-subtitle mx-auto">
+                    The window to establish NYIT as the premier &ldquo;AI Marketing&rdquo; educator in NYC
+                    is open. By 2027, &ldquo;AI Marketing&rdquo; will simply be &ldquo;Marketing.&rdquo;
+                </p>
+                <div class="divider center"></div>
+            </div>
+
+            <div class="steps-grid fade-up">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Validate Curriculum</h4>
+                    <p>Convene an Industry Advisory Board of NYC Marketing VPs to review the
+                        three certificates and ensure alignment with hiring needs.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Launch Certificate 1</h4>
+                    <p>AI Foundations for Marketing (5 weeks) is the natural MVP &mdash;
+                        lowest barrier, broadest audience, fastest to market.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Scale to Certificates 2 &amp; 3</h4>
+                    <p>Use Certificate 1 enrollment data and feedback to refine
+                        the Operations and Strategy curricula before launch.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>Formalize MS Scholarship</h4>
+                    <p>Coordinate with the Graduate College to finalize the
+                        $500-per-certificate scholarship toward the MS in Marketing Technology,
+                        AI and Analytics (Fall 2026 launch).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CLOSING CTA ===== -->
+    <div class="closing-cta">
+        <div class="container">
+            <p class="cta-tagline">&ldquo;Don't Let Your Job Be Automated. Automate Your Job.&rdquo;</p>
+            <h2>The Future of Marketing is Agentic.<br>NYIT is Ready to Lead.</h2>
+            <p>
+                Three progressive certificates. One MS pathway.
+                By focusing on AI skill progression, targeting mid-career professionals,
+                and emphasizing hands-on building, NYIT addresses the most pressing gap
+                in the NYC marketing labor market.
+            </p>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                NYIT AI-Integrated Marketing Certificates &mdash; Strategic Blueprint 2025&ndash;2030
+                <br>
+                <span style="color: rgba(255,255,255,0.3);">
+                    Prepared for the Office of the Dean &bull; New York Institute of Technology &bull;
+                    <a href="https://www.nyit.edu" target="_blank" rel="noopener">nyit.edu</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Toggle curriculum modules
+        function toggleModules(btn) {
+            var list = btn.nextElementSibling;
+            btn.classList.toggle('open');
+            list.classList.toggle('open');
+        }
+
+        // Mobile nav toggle
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            var nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for animations
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    var bars = entry.target.querySelectorAll('.bar-fill, .roi-bar');
+                    bars.forEach(function(bar) {
+                        setTimeout(function() { bar.classList.add('animated'); }, 200);
+                    });
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+        document.querySelectorAll('.bar-chart, .roi-chart').forEach(function(el) { observer.observe(el); });
+
+        // Active nav link highlighting
+        var sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', function() {
+            var scrollPos = window.scrollY + 100;
+            sections.forEach(function(section) {
+                var top = section.offsetTop;
+                var height = section.offsetHeight;
+                var id = section.getAttribute('id');
+                var link = document.querySelector('.nav-links a[href="#' + id + '"]');
+                if (link) {
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
+                        link.classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
